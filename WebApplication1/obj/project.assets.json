@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\Anil\\.nuget\\packages\\",
-      "outputPath": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\WebApplication1\\obj\\",
+      "outputPath": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Anil\\AppData\\Roaming\\NuGet\\NuGet.Config",

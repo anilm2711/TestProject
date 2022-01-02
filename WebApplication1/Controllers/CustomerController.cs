@@ -9,8 +9,8 @@ namespace WebApplication1.Controllers
         public Task BindModelAsync(ModelBindingContext bindingContext)
         {
             HttpContext httpContext= bindingContext.HttpContext;
-            string CustomerName = httpContext.Request.Form["txtCustomerName"];
-            string CustomerCode = httpContext.Request.Form["txtCustomerCode"];
+            string CustomerName = httpContext.Request.Form["CustomerName"];
+            string CustomerCode = httpContext.Request.Form["CustomerCode"];
             Customer customer=new Customer() { CustomerName=CustomerName, CustomerCode=CustomerCode};
             bindingContext.Result = ModelBindingResult.Success(customer);
             return Task.CompletedTask;
@@ -20,14 +20,18 @@ namespace WebApplication1.Controllers
     {
         public IActionResult AddCustomer()
         {
-            return View("AddCustomer");
+            return View("AddCustomer",new Customer());
         }
         public IActionResult Submit([ModelBinderAttribute(typeof(CustomerBinder))] Customer obj)
         {
-            //Customer obj = new Customer();
-            //obj.CustomerName = Request.Form["CustomerName"];
-            //obj.CustomerCode = Request.Form["CustomerCode"];
-            return View("CustomerDetails",obj);
+            if (ModelState.IsValid)
+            {
+                return View("CustomerDetails", obj);
+            }
+            else
+            {
+                return View("AddCustomer",obj);
+            }
         }
     }
 }

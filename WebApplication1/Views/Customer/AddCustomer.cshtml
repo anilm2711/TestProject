@@ -1,7 +1,9 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model WebApplication1.Models.Customer
 @{
+    
 }
 <html>
     <head>
@@ -10,10 +12,18 @@
     <body>
     <div> 
         <form action="Submit" method="post">
-            Customer Name <input name="txtCustomerName"  type="text" /><br />
-            Customer Code <input name="txtCustomerCode" type="text" /><br />
+            Customer Name <input name="CustomerName"  type="text" value="@Model.CustomerName" /><br />
+            @{
+               @Html.ValidationMessageFor(x=>x.CustomerName)
+            }<br />
+            Customer Code <input name="CustomerCode" type="text" value="@Model.CustomerCode"/><br />
+             @{
+               @Html.ValidationMessageFor(x=>x.CustomerCode)
+            }
+            <br />
             <input id="Submit1" type="submit" value="submit" />
         </form>
-    </div>
+        <br />
+     </div>
 </body>
 </html>

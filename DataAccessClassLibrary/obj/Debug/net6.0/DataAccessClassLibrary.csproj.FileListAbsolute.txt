@@ -1,0 +1,14 @@
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\bin\Debug\net6.0\DataAccessClassLibrary.deps.json
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\bin\Debug\net6.0\DataAccessClassLibrary.runtimeconfig.json
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\bin\Debug\net6.0\DataAccessClassLibrary.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\bin\Debug\net6.0\ref\DataAccessClassLibrary.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\bin\Debug\net6.0\DataAccessClassLibrary.pdb
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.csproj.AssemblyReference.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.AssemblyInfoInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.AssemblyInfo.cs
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.csproj.CoreCompileInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\obj\Debug\net6.0\ref\DataAccessClassLibrary.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.pdb
+E:\VS2022_TRIAL_PROJECT\TestProject\DataAccessClassLibrary\obj\Debug\net6.0\DataAccessClassLibrary.genruntimeconfig.cache

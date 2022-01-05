@@ -10,7 +10,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Miscellaneous Files",
       "ColorIndex": -1
+    },
+    "0c325b45-462d-49f0-9c65-13f008f9d6ea": {
+      "ProjectGuid": "0c325b45-462d-49f0-9c65-13f008f9d6ea",
+      "DisplayName": "DataAccessClassLibrary",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

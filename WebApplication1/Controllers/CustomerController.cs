@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using WebApplication1.DataAccessLibrary;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
@@ -26,6 +27,13 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
+                CustomerModel custModel = new CustomerModel();
+                CustomerDbContext customerDbContext = new CustomerDbContext();
+                custModel.CustomerName = obj.CustomerName;
+                custModel.CustomerCode = obj.CustomerCode;
+                customerDbContext.Add(custModel);
+                customerDbContext.Database.EnsureCreated();
+                customerDbContext.SaveChanges();
                 return View("CustomerDetails", obj);
             }
             else

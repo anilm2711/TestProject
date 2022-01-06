@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Repository.EF.Factory;
+using Repository.EF.Repositories;
+using WebApplication1.DataAccessLibrary;
 
 namespace WebApplication1.Controllers
 {
@@ -6,13 +9,22 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
-            TempData["Message"] = "Trying Data transfer";
-            return RedirectToAction("GoToHome", "Home");
+            //Get All Record
+            using (var context = new CustomerDbContext())
+            using (var unitOfWork = new UnitOfWork(context))
+            {
+                IRepositoryAsync<CustomerModel> customerRepository = new Repository<CustomerModel>(context, unitOfWork);
+
+                var getAllRecord = customerRepository.GetAll().ToList();
+            }
+            CustomerModel customerModel = new CustomerModel();
+            CustomerDbContext customerDbContext = new CustomerDbContext();
+            customerModel = customerDbContext.Customers.FirstOrDefault();
+            return View(customerModel);
         }
         public IActionResult GoToHome()
         {
-            ViewData["Time"] = DateTime.Now.ToString();
-            ViewBag.Time=DateTime.Now.ToString();
+           
             return View("MyHomePage");
         }
     }

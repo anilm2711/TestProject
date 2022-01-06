@@ -58,3 +58,16 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\runtimes\wi
 E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\obj\Debug\net6.0\WebApplication1.csproj.CopyComplete
 E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\obj\Debug\net6.0\WebApplication1.csproj.AssemblyReference.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\EntityFramework.SqlServer.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\EntityFramework.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\LinqKit.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\ServiceLocation.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\System.CodeDom.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\System.Data.SqlClient.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\Repository.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebApplication1\bin\Debug\net6.0\Repository.pdb

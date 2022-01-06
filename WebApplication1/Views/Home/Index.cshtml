@@ -1,15 +1,18 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model WebApplication1.DataAccessLibrary.CustomerModel
 @{
+
 }
 <html>
     <head>
-        <title>Index Page</title>
+<title></title>
     </head>
     <body>
         <div>
-            Welcome to my first MVC core.
+            CustomerName:@Model.CustomerName <br />
+            CustomerCode:@Model.CustomerCode
         </div>
     </body>
 </html>

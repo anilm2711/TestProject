@@ -1,18 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@model WebApplication1.DataAccessLibrary.CustomerModel
-@{
-
-}
-<html>
-    <head>
-<title></title>
-    </head>
-    <body>
-        <div>
-            CustomerName:@Model.CustomerName <br />
-            CustomerCode:@Model.CustomerCode
+﻿@using WebApplication1.DataAccessLibrary
+@model WebApplication1.ViewModel.CustomerViewModel
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Customer List</h2>
         </div>
-    </body>
-</html>
+        <div class="col-6 text-end">
+            <a asp-controller="Home" asp-action="CreateCustomer" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> &nbsp; Create New Customer
+            </a>
+        </div>
+        <br /><br />
+    </div>
+
+    <table id="custTable" class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th><h1>Customer Code</h1></th>
+                <th><h1>Customer Name</h1></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (CustomerModel cust in Model.customersList)
+            {
+                <tr>
+                    <td width="50%">@cust.CustomerCode</td>
+                    <td width="30%">@cust.CustomerName</td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Home" asp-action="EditCustomer" asp-route-id="@cust.CustomerId" 
+                            class="btn btn-primary mx-2">
+                                <i class="bi bi-pencil-square"></i>
+                                Edit</a>
+                        </div>
+                </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

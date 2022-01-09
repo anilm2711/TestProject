@@ -1,0 +1,44 @@
+﻿@model WebApplication1.ViewModel.CustomerViewModel
+
+@{
+    ViewData["Title"] = "SearchCustomer";
+}
+
+<h1>SearchCustomer</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div> 
+        <form action="SearchCustomer" method="post">
+        Enter Customer Name :- <input name="CustomerName" id="Text1" type="text" />
+            <br />
+            <input id="Submit1" type="submit" value="Search Customer" />
+        </form>
+    </div>
+    <br />
+<table class="table">
+    <thead>
+        <tr>
+            <th><h1>Customer Code</h1></th>
+			<th><h1>Customer Name</h1></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.customersList) {
+        <tr>
+            <td>
+                @item.CustomerCode
+            </td>
+             <td>
+                @item.CustomerName
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.CustomerId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.CustomerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.CustomerId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -15,7 +15,17 @@
       "ProjectGuid": "0c325b45-462d-49f0-9c65-13f008f9d6ea",
       "DisplayName": "DataAccessClassLibrary",
       "ColorIndex": 1
+    },
+    "e3ca0006-6f26-446e-b65c-d02ac87f4d97": {
+      "ProjectGuid": "e3ca0006-6f26-446e-b65c-d02ac87f4d97",
+      "DisplayName": "Repository",
+      "ColorIndex": 2
+    },
+    "919fd655-f067-4ba2-b932-d926e85dd6b4": {
+      "ProjectGuid": "919fd655-f067-4ba2-b932-d926e85dd6b4",
+      "DisplayName": "Script Documents",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }

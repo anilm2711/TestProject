@@ -1,29 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@model WebApplication1.Models.Customer
-@{
-    
-}
-<html>
-    <head>
-        <title>Enter Customer</title>
-    </head>
-    <body>
-    <div> 
-        <form action="Submit" method="post">
-            Customer Name <input name="CustomerName"  type="text" value="@Model.CustomerName" /><br />
-            @{
-               @Html.ValidationMessageFor(x=>x.CustomerName)
-            }<br />
-            Customer Code <input name="CustomerCode" type="text" value="@Model.CustomerCode"/><br />
-             @{
-               @Html.ValidationMessageFor(x=>x.CustomerCode)
-            }
-            <br />
-            <input id="Submit1" type="submit" value="submit" />
-        </form>
+﻿@using WebApplication1.DataAccessLibrary
+@model WebApplication1.ViewModel.CustomerViewModel
+
+
+
+
+    <form method="post">
+        Customer Name <input name="CustomerName" type="text" value="@Model.customer.CustomerName" /><br />
+        @{
+            @Html.ValidationMessageFor(x=>x.customer.CustomerName)
+        }<br />
+        Customer Code <input name="CustomerCode" type="text" value="@Model.customer.CustomerCode" /><br />
+        @{
+            @Html.ValidationMessageFor(x=>x.customer.CustomerCode)
+        }
         <br />
-     </div>
-</body>
-</html>
+        <input type="submit" value="submit" />
+    </form>
+
+    <br />
+
+    @*<script language="javascript">
+
+        alert("begore getcustomer")
+        $.get("getCustomers", null, BindData);
+        function BindData(customersList)
+        {
+        alert("Inside binddata")
+        var cTable=$("#custTable");
+        for(int i=0;i<customersList.length;i++)
+        {
+        var newRow="<tr>"+
+        "<td>"+customersList[0].CusotmerCode+"</td>"+
+        "<td>"+customersList[0].CusotmerName+"</td>"+
+        "</tr>";
+        cTable.append(newRow);
+        }
+        }
+
+
+        </script>*@
+
+</div>

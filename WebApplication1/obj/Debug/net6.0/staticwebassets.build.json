@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "g0nrB7JihKCHD+zJFesjjuoOc/BpsRGw4FJQuMz3toE=",
+  "Hash": "ozZASi5nNVeix3a4MPExVoDmzSPSH1kwnxSyLXst5Ic=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -51,6 +51,23 @@
       "OriginalItemSpec": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebApplication1\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WebApplication1.bundle.scp.css"
     },
     {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebApplication1\\wwwroot\\css\\bootswatchTheme.css",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "css/bootswatchTheme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootswatchTheme.css"
+    },
+    {
       "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebApplication1\\wwwroot\\css\\site.css",
       "SourceId": "WebApplication1",
       "SourceType": "Discovered",
@@ -66,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebApplication1\\wwwroot\\css\\table.css",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "css/table.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\table.css"
     },
     {
       "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebApplication1\\wwwroot\\favicon.ico",

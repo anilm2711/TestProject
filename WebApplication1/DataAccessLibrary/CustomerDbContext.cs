@@ -1,11 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.Core.Objects.DataClasses;
 
 namespace WebApplication1.DataAccessLibrary
 {
-    public class CustomerDbContext:DbContext
+    public class CustomerDbContext : DbContext
     {
-        public DbSet<CustomerModel> Customers { get; set; }     
+        public DbSet<CustomerModel> Customers { get; set; }
 
         public CustomerDbContext()
         {
@@ -30,10 +32,12 @@ namespace WebApplication1.DataAccessLibrary
         public int CustomerId { get; set; }
         [Required]
         [StringLength(10)]
+        [DisplayName("Customer Code")]
         public string? CustomerCode { get; set; }
 
         [Required]
         [StringLength(15)]
+        [DisplayName("Customer Name")]
         public string? CustomerName { get; set; }
     }
 }

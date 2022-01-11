@@ -26,6 +26,9 @@ namespace FnFManagement.Models
         [StringLength(30)]
         public string EmailId { get; set; }
 
+        [Required]
+        public int PersonType { get; set; }
+
 
     }
 }

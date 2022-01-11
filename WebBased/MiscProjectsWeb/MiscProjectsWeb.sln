@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FnFManagement", "FnFManagement\FnFManagement.csproj", "{5FF8F1A0-2B6F-46CE-BBB0-B5D9AF01AF1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FnFManagement", "FnFManagement\FnFManagement.csproj", "{5FF8F1A0-2B6F-46CE-BBB0-B5D9AF01AF1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

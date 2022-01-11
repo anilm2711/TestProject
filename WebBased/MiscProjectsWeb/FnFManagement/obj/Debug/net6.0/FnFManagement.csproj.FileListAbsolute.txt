@@ -1,0 +1,8 @@
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\MiscProjectsWeb\FnFManagement\obj\Debug\net6.0\FnFManagement.csproj.AssemblyReference.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\MiscProjectsWeb\FnFManagement\obj\Debug\net6.0\FnFManagement.GeneratedMSBuildEditorConfig.editorconfig
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\MiscProjectsWeb\FnFManagement\obj\Debug\net6.0\FnFManagement.AssemblyInfoInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\MiscProjectsWeb\FnFManagement\obj\Debug\net6.0\FnFManagement.AssemblyInfo.cs
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\MiscProjectsWeb\FnFManagement\obj\Debug\net6.0\FnFManagement.csproj.CoreCompileInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\MiscProjectsWeb\FnFManagement\obj\Debug\net6.0\FnFManagement.MvcApplicationPartsAssemblyInfo.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\MiscProjectsWeb\FnFManagement\obj\Debug\net6.0\FnFManagement.RazorAssemblyInfo.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\MiscProjectsWeb\FnFManagement\obj\Debug\net6.0\FnFManagement.RazorAssemblyInfo.cs

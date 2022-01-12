@@ -5,7 +5,12 @@
       "ProjectGuid": "5ff8f1a0-2b6f-46ce-bbb0-b5d9af01af1d",
       "DisplayName": "FnFManagement",
       "ColorIndex": 0
+    },
+    "6ba3f007-9c10-4773-bbcc-6b00b4c5b879": {
+      "ProjectGuid": "6ba3f007-9c10-4773-bbcc-6b00b4c5b879",
+      "DisplayName": "Repository",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

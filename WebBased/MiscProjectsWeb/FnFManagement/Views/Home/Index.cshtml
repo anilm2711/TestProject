@@ -1,8 +1,47 @@
-﻿@{
+﻿@model IEnumerable<Person>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Member List</h2>
+		</div>
+        <div class="col-6 text-end">
+            <a asp-controller="Home" asp-action="AddPerson" class="btn btn-primary">
+               <i class="bi bi-plus-circle"></i> &nbsp; Create New Member
+			</a>
+		</div>
+	</div>
+    <br /><br />
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile Number</th>
+            <th scope="col">Adhaar Number</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr class="table-active">
+                <td >@p.NameFirst  @p.NameMiddle @p.NameLast</td>
+                <td >@p.EmailId</td>
+                <td >@p.MobileNumber</td>
+                <td >@p.AdhaarNumber</td>
+                <td><div class="btn-group" role="group" align="right">
+                        <a asp-controller="Home" asp-action="EditPerson" asp-route-PersionId ="@p.PersionId"
+                        class="btn alert-primary m-0"> <i class="bi bi-pencil-square"></i> Edit</a>
+                        <a asp-controller="Home" asp-action="DeletePerson" asp-route-PersionId="@p.PersionId"
+                        class="btn btn-danger m-0"> <i class="bi bi-trash-fill"></i> Delete</a>
+					</div> 
+                  </td>
+            </tr>
+        }
+    </tbody>
+</table>

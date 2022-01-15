@@ -1,0 +1,15 @@
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\obj\Debug\net6.0\AspxToRazor.csproj.AssemblyReference.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\obj\Debug\net6.0\AspxToRazor.GeneratedMSBuildEditorConfig.editorconfig
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\obj\Debug\net6.0\AspxToRazor.AssemblyInfoInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\obj\Debug\net6.0\AspxToRazor.AssemblyInfo.cs
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\obj\Debug\net6.0\AspxToRazor.csproj.CoreCompileInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\bin\Debug\net6.0\AspxToRazor.exe
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\bin\Debug\net6.0\AspxToRazor.deps.json
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\bin\Debug\net6.0\AspxToRazor.runtimeconfig.json
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\bin\Debug\net6.0\AspxToRazor.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\bin\Debug\net6.0\ref\AspxToRazor.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\bin\Debug\net6.0\AspxToRazor.pdb
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\obj\Debug\net6.0\AspxToRazor.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\obj\Debug\net6.0\ref\AspxToRazor.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\obj\Debug\net6.0\AspxToRazor.pdb
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AspxToRazor\obj\Debug\net6.0\AspxToRazor.genruntimeconfig.cache

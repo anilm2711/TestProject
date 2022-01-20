@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "744f28e1-77d9-4553-a6bd-69977e106c51": {
+      "ProjectGuid": "744f28e1-77d9-4553-a6bd-69977e106c51",
+      "DisplayName": "BlazorAppServer",
+      "ColorIndex": 0
+    },
+    "f3ef2c23-e86c-4c7d-969b-515e93aee7f1": {
+      "ProjectGuid": "f3ef2c23-e86c-4c7d-969b-515e93aee7f1",
+      "DisplayName": "EBazarModels",
+      "ColorIndex": 1
+    },
+    "686cb0bd-6cac-40f5-9d9c-ea1f9565feb0": {
+      "ProjectGuid": "686cb0bd-6cac-40f5-9d9c-ea1f9565feb0",
+      "DisplayName": "EBazarWebApi",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}

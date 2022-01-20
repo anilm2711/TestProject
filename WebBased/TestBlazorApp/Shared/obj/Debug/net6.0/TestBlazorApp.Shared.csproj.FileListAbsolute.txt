@@ -1,0 +1,12 @@
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\bin\Debug\net6.0\TestBlazorApp.Shared.deps.json
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\bin\Debug\net6.0\TestBlazorApp.Shared.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\bin\Debug\net6.0\ref\TestBlazorApp.Shared.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\bin\Debug\net6.0\TestBlazorApp.Shared.pdb
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\obj\Debug\net6.0\TestBlazorApp.Shared.csproj.AssemblyReference.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\obj\Debug\net6.0\TestBlazorApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\obj\Debug\net6.0\TestBlazorApp.Shared.AssemblyInfoInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\obj\Debug\net6.0\TestBlazorApp.Shared.AssemblyInfo.cs
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\obj\Debug\net6.0\TestBlazorApp.Shared.csproj.CoreCompileInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\obj\Debug\net6.0\TestBlazorApp.Shared.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\obj\Debug\net6.0\ref\TestBlazorApp.Shared.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\TestBlazorApp\Shared\obj\Debug\net6.0\TestBlazorApp.Shared.pdb

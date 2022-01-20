@@ -1,0 +1,33 @@
+﻿@page "/counter"
+@inject StateContainer.StateContainer StateContainer
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @StateContainer.CounterProperty</p>
+
+<button class="btn btn-primary" @onclick="ChangePropertyValue">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    protected override void OnInitialized()
+    {
+        StateContainer.OnChange += StateHasChanged;
+    }
+
+    //private void IncrementCount()
+    //{
+    //    currentCount++;
+    //}
+
+    private void ChangePropertyValue()
+    {
+        StateContainer.CounterProperty = currentCount++;
+    }
+
+    public void Dispose()
+    {
+        StateContainer.OnChange -= StateHasChanged;
+    }
+}

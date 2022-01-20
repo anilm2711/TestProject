@@ -12,7 +12,7 @@ namespace eBazar.Controllers
         public IActionResult Index()
         {
             IEnumerable<Actor> actors = _context.Actors;
-            return View();
+            return View(actors);
         }
     }
 }

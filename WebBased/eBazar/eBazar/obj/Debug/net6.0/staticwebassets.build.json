@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7a1u+VYG/lvZL7Nbg01BJbofKsBvjM00eSZO38UhNXY=",
+  "Hash": "HeqATNnT6qftsEKAzDysmnQtqSQRih1V3inaTpM9uSA=",
   "Source": "eBazar",
   "BasePath": "_content/eBazar",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\eBazar\\eBazar\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\eBazar.bundle.scp.css"
+    },
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\eBazar\\eBazar\\wwwroot\\css\\bootswatchTheme.css",
+      "SourceId": "eBazar",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\eBazar\\eBazar\\wwwroot\\",
+      "BasePath": "_content/eBazar",
+      "RelativePath": "css/bootswatchTheme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootswatchTheme.css"
     },
     {
       "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\eBazar\\eBazar\\wwwroot\\css\\site.css",

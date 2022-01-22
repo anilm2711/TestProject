@@ -4,15 +4,13 @@ using Microsoft.AspNetCore.Components;
 
 namespace BlazorAppServer.Pages
 {
-    public class MovieDetailsBase : ComponentBase
+    public class CinemaDetailsBase:ComponentBase
     {
         [Parameter]
         public string Id { get; set; }
         [Inject]
-        public IMovieService service { get; set; }
-        public Movie result { get; set; }
-
-        public string movieavailability { get; set; }
+        public ICinemaService service { get; set; }
+        public Cinema result { get; set; }
 
         protected string ButtonText { get; set; } = "Hide Footer";
         protected string? CssClass { get; set; } = null;
@@ -20,7 +18,7 @@ namespace BlazorAppServer.Pages
         protected override async Task OnInitializedAsync()
         {
             Id = Id ?? "1";
-            result = (await service.GetResultByIdAsync($"api/Movies/{Id}"));
+            result = (await service.GetResultByIdAsync($"api/Cinemas/{Id}"));
         }
 
         protected void Button_Click()

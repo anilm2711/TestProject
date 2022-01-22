@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EBazarModels.Models;
 using EBazarWebApi.Data;
+using Newtonsoft.Json;
 
 namespace EBazarWebApi.Controllers
 {
@@ -24,9 +25,12 @@ namespace EBazarWebApi.Controllers
 
         // GET: api/Movies
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Movie>>> GetMovies()
+        public string GetMovies()
         {
-            return await _context.Movies.ToListAsync();
+            List<Movie> movie = _context.Movies.Include(e => e.Cinema).Include(x => x.Producer).ToList();
+            string json = JsonConvert.SerializeObject(movie, Formatting.Indented, new JsonSerializerSettings 
+            { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+            return json;
         }
 
         // GET: api/Movies/5

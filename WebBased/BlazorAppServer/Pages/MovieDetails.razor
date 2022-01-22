@@ -12,12 +12,23 @@ else
     <div class="card border-primary mb-5" style="max-width: 50rem;">
         <h3 class="card-header ">@result.Name</h3>
         <div class="card-body">
-            <img src="@result.ImageURL" alt="Girl in a jacket" height="400" width="400" align="middle">
+            <img src="@result.ImageURL" alt="@result.Name" height="400" width="400" align="middle">
             <h4 class="card-title">@result.Description</h4>
-            <h4 class="card-title">@result.StartDate</h4>
+            <h4 class="card-title">Availability:
+               @* @if(@result.StartDate>DateTime.Now)
+                {
+                    @movieavailability = "Coming";
+                }
+                else if(@result.StartDate<DateTime.Now)
+                {
+                    @movieavailability = "In Cinema Now";
+                }
+            *@
+            </h4>
             <h4 class="card-title">@result.EndDate</h4>
             <h4 class="card-title">@result.MovieCategory</h4>
-            <h4 class="card-title">@result.Price</h4>
+            <h4 class="card-title">
+              Price:@result.Price.ToString("c")</h4>
             <a class="btn btn-dark mx-2" @onclick="@Button_Click">@ButtonText </a>
             <p class="card-text"></p>
         </div>

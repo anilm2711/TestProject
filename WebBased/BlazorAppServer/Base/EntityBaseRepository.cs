@@ -1,5 +1,6 @@
 ﻿using EBazarModels.Models;
 using System.Linq.Expressions;
+using System.Text.Json;
 
 namespace BlazorAppServer.Base
 {
@@ -12,6 +13,8 @@ namespace BlazorAppServer.Base
         }
         public async Task<IEnumerable<T>> GetResult(string uri)
         {
+            JsonSerializerOptions options= new JsonSerializerOptions(); 
+
             Task<T[]?> c = _context.GetFromJsonAsync<T[]>(uri);
             return await c;
         }
@@ -22,5 +25,11 @@ namespace BlazorAppServer.Base
             return await c;
         }
 
+        public  Task<string> GetResultSerialize(string uri)
+        {
+            return _context.GetStringAsync(uri);
+        }
+
+        
     }
 }

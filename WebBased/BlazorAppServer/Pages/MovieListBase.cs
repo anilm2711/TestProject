@@ -1,6 +1,7 @@
 ﻿using BlazorAppServer.Services;
 using EBazarModels.Models;
 using Microsoft.AspNetCore.Components;
+using Newtonsoft.Json;
 
 namespace BlazorAppServer.Pages
 {
@@ -12,7 +13,8 @@ namespace BlazorAppServer.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            resultList = (await service.GetResult("api/Movies")).ToList();
+            Task<string> json =  service.GetResultSerialize("api/Movies");
+            resultList = JsonConvert.DeserializeObject<List<Movie>>(json.Result, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
         }
     }
 }

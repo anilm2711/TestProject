@@ -3137,7 +3137,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.1"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.1",
+          "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
           "bin/placeholder/EBazarModels.dll": {}

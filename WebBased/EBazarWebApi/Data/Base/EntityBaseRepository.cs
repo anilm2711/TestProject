@@ -28,7 +28,7 @@ namespace EBazarWebApi.Data.Base
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<T>> GetAllAsync() => await _context.Set<T>().ToListAsync();
+        public async Task<IEnumerable<T>> GetAllAsync() => await _context.Set<T>().Take(500).ToListAsync();
 
         public async Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties)
         {

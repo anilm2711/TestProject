@@ -1,0 +1,28 @@
+﻿@page "/actordetails/{id}"
+@page "/actordetails"
+@inherits ActorDetailsBase
+
+@if (result == null)
+{
+   <div class="spinner"></div>
+}
+else
+{
+
+    <div class="card border-primary mb-5" style="max-width: 50rem;">
+        <h3 class="card-header ">@result.FullName</h3>
+        <div class="card-body">
+             <img src="@result.ProfilePictureURL" alt="Girl in a jacket" height="400" width="400"  align="middle">
+    <h4 class="card-title">@result.Bio</h4>
+    <a class="btn btn-dark mx-2" @onclick="@Button_Click">@ButtonText </a>
+    <p class="card-text"></p>
+  </div>
+        <div class="card-footer @CssClass">
+            <a class="btn btn-dark mx-2" href="\">Back</a>
+            <a class="btn btn-dark mx-2"> Edit</a>
+            <a class="btn btn-dark mx-2"> Delete</a>
+
+        </div>
+    </div>
+
+}

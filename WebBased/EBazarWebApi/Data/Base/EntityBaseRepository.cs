@@ -40,7 +40,7 @@ namespace EBazarWebApi.Data.Base
 
         public async Task<T> GetByIdAsync(int id)
         {
-         return   await _context.Set<T>().FindAsync(id);
+            return await _context.Set<T>().FindAsync(id);
         }
 
         public async Task<T> GetByIdAsync(int id, params Expression<Func<T, object>>[] includeProperties)
@@ -64,7 +64,7 @@ namespace EBazarWebApi.Data.Base
 
                 throw;
             }
-            
+
         }
         public async void Update(int id, T entity)
         {
@@ -74,7 +74,7 @@ namespace EBazarWebApi.Data.Base
                 entityEntry.State = EntityState.Modified;
                 _context.SaveChanges();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
@@ -82,7 +82,7 @@ namespace EBazarWebApi.Data.Base
         public bool IsExists(int id)
         {
             return _context.Set<T>().Any(n => n.Id == id);
-            
+
         }
     }
 }

@@ -1,4 +1,5 @@
-using BlazorAppServer.Data;
+
+using BlazorAppServer.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -7,7 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+
+builder.Services.AddHttpClient<IActorService, ActorService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
+builder.Services.AddHttpClient<IProducerService, ProducerService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
+builder.Services.AddHttpClient<IMovieService, MovieService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
+builder.Services.AddHttpClient<IOrderService, OrderService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
+builder.Services.AddHttpClient<ICinemaService, CinemaService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
 
 var app = builder.Build();
 

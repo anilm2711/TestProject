@@ -1,3 +1,11 @@
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\NuGet.Frameworks.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\NuGet.ProjectModel.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.csproj.AssemblyReference.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.GeneratedMSBuildEditorConfig.editorconfig
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.AssemblyInfoInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.AssemblyInfo.cs
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.csproj.CoreCompileInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.MvcApplicationPartsAssemblyInfo.cache
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\appsettings.Development.json
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\appsettings.json
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\EBazarWebApi.exe
@@ -9,8 +17,11 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\EBaza
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Humanizer.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\MessagePack.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\MessagePack.Annotations.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Connections.Abstractions.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Http.Connections.Common.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -37,6 +48,7 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Micro
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.Extensions.Features.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.Identity.Client.dll
@@ -45,7 +57,6 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Micro
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.VisualStudio.Debugger.Contracts.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -59,15 +70,10 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Newto
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\NuGet.Common.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\NuGet.Configuration.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\NuGet.DependencyResolver.Core.dll
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\NuGet.Frameworks.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\NuGet.LibraryModel.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\NuGet.Packaging.dll
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\NuGet.ProjectModel.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\NuGet.Protocol.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\NuGet.Versioning.dll
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\System.Composition.AttributedModel.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\System.Composition.Convention.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\System.Composition.Hosting.dll
@@ -76,6 +82,7 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\Syste
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\System.Drawing.Common.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\System.IO.Pipelines.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\System.Runtime.Caching.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\System.Security.Permissions.dll
@@ -252,13 +259,6 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\runti
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\EBazarModels.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\bin\Debug\net6.0\EBazarModels.pdb
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.csproj.AssemblyReference.cache
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.GeneratedMSBuildEditorConfig.editorconfig
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.AssemblyInfoInputs.cache
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.AssemblyInfo.cs
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.csproj.CoreCompileInputs.cache
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.MvcApplicationPartsAssemblyInfo.cs
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\EBazarWebApi.MvcApplicationPartsAssemblyInfo.cache
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\staticwebassets.build.json
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\staticwebassets.development.json
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarWebApi\obj\Debug\net6.0\scopedcss\bundle\EBazarWebApi.styles.css

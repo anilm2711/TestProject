@@ -1,0 +1,50 @@
+﻿@page "/producer"
+@inherits ProducerListBase
+
+<div class="container p-3">
+    <div align="right">
+        <div class="col-6 text-end">
+            <a asp-controller="Actors" asp-action="AddA" class="btn btn-primary">
+               <i class="bi bi-plus-circle"></i> &nbsp; Add New Producer
+			</a>
+		</div>
+	</div>
+    <br /><br />
+@if (Producers == null)
+    {
+           <div class="spinner"></div>
+    }
+    else
+    {
+    <table class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>ProfilePictureUrl</th>
+                <th>FullName</th>
+                <th>Bio</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+                @foreach (var obj in Producers)
+                {
+                    <tr>
+                        <td width="20%" class="align-middle">
+                         <img class="rounded-circle" src="@obj.ProfilePictureURL" alt="@obj.FullName" style="max-width:80%"/>
+                         </td>
+                        <td width="20%" class="align-middle"> @obj.FullName</td>
+                         <td width="20%" class="align-middle"> @obj.Bio</td>
+                        <td class="align-middle">
+                            <div class="w-75 btn-group" role="group">
+                                <a class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i> Edit</a>
+                                <a class="btn btn-primary mx-2" href="@($"/producerdetails/{obj.Id}")"> <i class="bi bi-pencil-square"></i> Details</a>
+                                <a class="btn btn-danger mx-2"> <i class="bi bi-trash-fill"></i> Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+        </tbody>
+
+    </table>
+    }
+</div>

@@ -5,6 +5,9 @@ namespace EBazarWebApi.Data.Services
 {
     public class ActorsService : EntityBaseRepository<Actor>, IActorsService
     {
-        public ActorsService(AppDbContext context) : base(context) { }
+        private readonly HttpClient _httpClient;
+        public ActorsService(AppDbContext context) : base(context)
+        {
+        }
     }
 }

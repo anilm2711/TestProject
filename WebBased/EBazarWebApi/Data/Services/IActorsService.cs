@@ -5,5 +5,6 @@ namespace EBazarWebApi.Data.Services
 {
     public interface IActorsService:IEntityBaseRepository<Actor>
     {
+       
     }
 }

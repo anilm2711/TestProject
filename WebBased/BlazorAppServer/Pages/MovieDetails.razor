@@ -1,0 +1,32 @@
+﻿@page "/moviedetails/{id}"
+@page "/moviedetails"
+@inherits MovieDetailsBase
+
+@if (result == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+
+    <div class="card border-primary mb-5" style="max-width: 50rem;">
+        <h3 class="card-header ">@result.Name</h3>
+        <div class="card-body">
+            <img src="@result.ImageURL" alt="Girl in a jacket" height="400" width="400" align="middle">
+            <h4 class="card-title">@result.Description</h4>
+            <h4 class="card-title">@result.StartDate</h4>
+            <h4 class="card-title">@result.EndDate</h4>
+            <h4 class="card-title">@result.MovieCategory</h4>
+            <h4 class="card-title">@result.Price</h4>
+            <a class="btn btn-dark mx-2" @onclick="@Button_Click">@ButtonText </a>
+            <p class="card-text"></p>
+        </div>
+        <div class="card-footer @CssClass">
+            <a class="btn btn-dark mx-2" href="movie">Back</a>
+            <a class="btn btn-dark mx-2"> Edit</a>
+            <a class="btn btn-dark mx-2"> Delete</a>
+
+        </div>
+    </div>
+
+}

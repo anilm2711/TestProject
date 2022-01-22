@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8uZmzs3EmzypIHZGRT1LsLAItAWVEf60HzPDLhbTpxQ=",
+  "Hash": "dtqazGWJNc0HctfPFK/KD2oEPlKCTNLCE3SceXE8O4o=",
   "Source": "BlazorAppServer",
   "BasePath": "_content/BlazorAppServer",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\BlazorAppServer\\wwwroot\\css\\bootswatchTheme.css",
+      "SourceId": "BlazorAppServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\BlazorAppServer\\wwwroot\\",
+      "BasePath": "_content/BlazorAppServer",
+      "RelativePath": "css/bootswatchTheme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootswatchTheme.css"
     },
     {
       "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\BlazorAppServer\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",

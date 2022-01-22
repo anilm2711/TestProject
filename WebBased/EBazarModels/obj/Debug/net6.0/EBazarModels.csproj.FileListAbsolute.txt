@@ -2,6 +2,7 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\bin\Debug\net6.0\EBaza
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\bin\Debug\net6.0\EBazarModels.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\bin\Debug\net6.0\ref\EBazarModels.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\bin\Debug\net6.0\EBazarModels.pdb
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\obj\Debug\net6.0\EBazarModels.csproj.AssemblyReference.cache
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\obj\Debug\net6.0\EBazarModels.GeneratedMSBuildEditorConfig.editorconfig
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\obj\Debug\net6.0\EBazarModels.AssemblyInfoInputs.cache
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\obj\Debug\net6.0\EBazarModels.AssemblyInfo.cs
@@ -9,4 +10,3 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\obj\Debug\net6.0\EBaza
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\obj\Debug\net6.0\EBazarModels.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\obj\Debug\net6.0\ref\EBazarModels.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\obj\Debug\net6.0\EBazarModels.pdb
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\EBazarModels\obj\Debug\net6.0\EBazarModels.csproj.AssemblyReference.cache

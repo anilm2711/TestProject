@@ -5,9 +5,9 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppServer", "BlazorAppServer.csproj", "{744F28E1-77D9-4553-A6BD-69977E106C51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBazarModels", "..\EBazarModels\EBazarModels.csproj", "{F3EF2C23-E86C-4C7D-969B-515E93AEE7F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBazarModels", "..\EBazarModels\EBazarModels.csproj", "{F3EF2C23-E86C-4C7D-969B-515E93AEE7F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBazarWebApi", "..\EBazarWebApi\EBazarWebApi.csproj", "{686CB0BD-6CAC-40F5-9D9C-EA1F9565FEB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBazarWebApi", "..\EBazarWebApi\EBazarWebApi.csproj", "{686CB0BD-6CAC-40F5-9D9C-EA1F9565FEB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,46 +5,28 @@
     <div align="right">
         <div class="col-6 text-end">
             <a asp-controller="Actors" asp-action="AddActor" class="btn btn-primary">
-               <i class="bi bi-plus-circle"></i> &nbsp; Add New Actor
-			</a>
-		</div>
-	</div>
+                <i class="bi bi-plus-circle"></i> &nbsp; Add New Actor
+            </a>
+        </div>
+        <h4>Selected Actor Count: @SelectedActorCount</h4>
+    </div>
     <br /><br />
-@if (Actors == null)
+    @if (Actors == null)
     {
-           <div class="spinner"></div>
+        <div class="spinner"></div>
     }
     else
-    {
-    <table class="table table-bordered table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>ProfilePictureUrl</th>
-                <th>FullName</th>
-                <th>Bio</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    { <div align="left" >
+        <input type="checkbox" id="showFooter" @bind="ShowFooter" />
+        <label for="showFooter">Show More</label>
+    </div style="position:fixed">
+        <table class="table table-bordered table-striped" style="width:100%">
+            <tbody>
                 @foreach (var obj in Actors)
                 {
-                    <tr>
-                        <td width="20%" class="align-middle">
-                         <img class="rounded-circle" src="@obj.ProfilePictureURL" alt="@obj.FullName" style="max-width:80%"/>
-                         </td>
-                        <td width="20%" class="align-middle"> @obj.FullName</td>
-                         <td width="20%" class="align-middle"> @obj.Bio</td>
-                        <td class="align-middle">
-                            <div class="w-75 btn-group" role="group">
-                                <a class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i> Edit</a>
-                                <a class="btn btn-primary mx-2" href="@($"actordetails/{obj.Id}")"> <i class="bi bi-pencil-square"></i> Details</a>
-                                <a class="btn btn-danger mx-2"> <i class="bi bi-trash-fill"></i> Delete</a>
-                            </div>
-                        </td>
-                    </tr>
+                    <DisplayActor Actor="obj" ShowFooter="ShowFooter" OnActorSelection="ActorSelectionChanged"></DisplayActor>
                 }
-        </tbody>
-
-    </table>
+            </tbody>
+        </table>
     }
 </div>

@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "Hash": "mmP9JtwVxoazsEg5tg9WgD1w1VYpIieYHWmm0l5Aapg=",
+  "Source": "AKM.Component",
+  "BasePath": "_content/AKM.Component",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "AKM.Component\\wwwroot",
+      "Source": "AKM.Component",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\wwwroot\\",
+      "BasePath": "_content/AKM.Component",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\obj\\Debug\\net6.0\\scopedcss\\bundle\\AKM.Component.styles.css",
+      "SourceId": "AKM.Component",
+      "SourceType": "Computed",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/AKM.Component",
+      "RelativePath": "AKM.Component.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\obj\\Debug\\net6.0\\scopedcss\\bundle\\AKM.Component.styles.css"
+    },
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\AKM.Component.bundle.scp.css",
+      "SourceId": "AKM.Component",
+      "SourceType": "Computed",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/AKM.Component",
+      "RelativePath": "AKM.Component.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\AKM.Component.bundle.scp.css"
+    },
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\wwwroot\\background.png",
+      "SourceId": "AKM.Component",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\wwwroot\\",
+      "BasePath": "_content/AKM.Component",
+      "RelativePath": "background.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\background.png"
+    },
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\wwwroot\\exampleJsInterop.js",
+      "SourceId": "AKM.Component",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\wwwroot\\",
+      "BasePath": "_content/AKM.Component",
+      "RelativePath": "exampleJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\exampleJsInterop.js"
+    }
+  ]
+}

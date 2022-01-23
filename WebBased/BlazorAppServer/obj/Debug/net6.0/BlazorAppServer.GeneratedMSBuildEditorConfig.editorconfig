@@ -39,6 +39,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheUFjdG9yLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/EditActor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEFjdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/MovieDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVEZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

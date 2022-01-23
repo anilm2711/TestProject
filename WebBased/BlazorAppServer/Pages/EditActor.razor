@@ -1,0 +1,79 @@
+﻿@page "/editactor/{id}"
+
+@inherits EditActorBase
+
+@if (Actor == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <EditForm Model="@Actor">
+        <fieldset>
+            <table class="table" style="width:100%">
+                <tr>
+                    <td  style="width:30%">
+                        <div align="center">
+                            <img src="@picUrl" alt="Image" height="250" width="230" align="middle">
+                        </div>
+                    </td>
+                    <td style="width:80%">
+                        <div align="left">
+                            <div class="form-group">
+                                <label for="ProfilePictureURL" class="form-label mt-4">ProfilePictureURL </label>
+                                <InputText id="firstName" class="form-control" placeholder="Pic url" @bind-Value="@picUrl" />
+                            </div>
+                            <div class="form-group">
+                                <label for="FullName" class="form-label mt-4">Full Name</label>
+                                <InputText id="lastName" class="form-control" placeholder="Full Name" @bind-Value="Actor.FullName" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Bio" class="form-label mt-4">Bio</label>
+                                <InputTextArea id="email" class="form-control" placeholder="About" @bind-Value="Actor.Bio" rows="3" />
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+
+            <hr />
+            <div align="right">
+                <a class="btn btn-dark" href="/actor">Back</a>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+        </fieldset>
+    </EditForm>
+}
+@*<div class="container" style="justify-content: left" >
+    <EditForm Model="@Actor">
+    <div class="form-group row">
+    <label for="profilePictureURL" class="col-sm-2 col-form-label">
+    Pic url
+    </label>
+    <div class="col-sm-10">
+    <InputText id="firstName" class="form-control" placeholder="Pic url"
+    @bind-Value="Actor.ProfilePictureURL" />
+    </div>
+    </div>
+    <div class="form-group row">
+    <label for="fullName" class="col-sm-2 col-form-label">
+    Full Name
+    </label>
+    <div class="col-sm-10">
+    <InputText id="lastName" class="form-control" placeholder="Full Name"
+    @bind-Value="Actor.FullName" />
+    </div>
+    </div>
+    <div class="form-group row">
+    <label for="bio" class="col-sm-2 col-form-label">
+    About
+    </label>
+    <div class="col-sm-10">
+    <InputText id="email" class="form-control" placeholder="About"
+    @bind-Value="Actor.Bio" />
+    </div>
+    </div>
+    </EditForm>
+    </div>*@

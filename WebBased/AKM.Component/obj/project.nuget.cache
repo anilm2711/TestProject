@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "dgSpecHash": "dUMOShSdZCLb/5UZUo/Pin61IYEZVPFHiDd6Ej+GRC/KSA7rUiHcUulclTXu7wiKoWA91dd83KhiO8DJiRFy0w==",
+  "success": true,
+  "projectFilePath": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\AKM.Component.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.aspnetcore.authorization\\6.0.1\\microsoft.aspnetcore.authorization.6.0.1.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.aspnetcore.components\\6.0.1\\microsoft.aspnetcore.components.6.0.1.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\6.0.1\\microsoft.aspnetcore.components.analyzers.6.0.1.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\6.0.1\\microsoft.aspnetcore.components.forms.6.0.1.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.aspnetcore.components.web\\6.0.1\\microsoft.aspnetcore.components.web.6.0.1.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.aspnetcore.metadata\\6.0.1\\microsoft.aspnetcore.metadata.6.0.1.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\microsoft.jsinterop\\6.0.1\\microsoft.jsinterop.6.0.1.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\system.io.pipelines\\6.0.1\\system.io.pipelines.6.0.1.nupkg.sha512",
+    "C:\\Users\\Anil\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -45,3 +45,6 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\re
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.pdb
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.genruntimeconfig.cache
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Newtonsoft.Json.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\AutoMapper.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll

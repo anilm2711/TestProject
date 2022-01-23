@@ -1,6 +1,7 @@
 ﻿using BlazorAppServer.Services;
 using EBazarModels.Models;
 using Microsoft.AspNetCore.Components;
+using Newtonsoft.Json;
 
 namespace BlazorAppServer.Pages
 {
@@ -13,7 +14,9 @@ namespace BlazorAppServer.Pages
         public bool ShowFooter { get; set; } = true;
         protected override async Task OnInitializedAsync()
         {
-            Actors = (await service.GetResult("api/Actors")).ToList();
+            //Actors = (await service.GetResult("api/Actors")).ToList();
+            Task<string> json = service.GetResultSerialize("api/Actors");
+            Actors = JsonConvert.DeserializeObject<List<Actor>>(json.Result, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
         }
         protected int SelectedActorCount { get; set; }=0;
         protected void ActorSelectionChanged(bool IsSelected)

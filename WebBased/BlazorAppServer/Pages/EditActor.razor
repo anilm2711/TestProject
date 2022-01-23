@@ -8,11 +8,13 @@
 }
 else
 {
-    <EditForm Model="@Actor">
+    <EditForm Model="@Actor" OnValidSubmit=@HandleValidSubmit>
+        @*<DataAnnotationsValidator></DataAnnotationsValidator>*@
+        @*<ObjectGraphDataAnnotationsValidator></ObjectGraphDataAnnotationsValidator>*@
         <fieldset>
             <table class="table" style="width:100%">
                 <tr>
-                    <td  style="width:30%">
+                    <td style="width:30%">
                         <div align="center">
                             <img src="@picUrl" alt="Image" height="250" width="230" align="middle">
                         </div>
@@ -21,26 +23,27 @@ else
                         <div align="left">
                             <div class="form-group">
                                 <label for="ProfilePictureURL" class="form-label mt-4">ProfilePictureURL </label>
-                                <InputText id="firstName" class="form-control" placeholder="Pic url" @bind-Value="@picUrl" />
+                                <InputText class="form-control" placeholder="Pic url" @bind-Value="@picUrl" />
+                                <ValidationMessage For="@(()=>Actor.ProfilePictureURL)"></ValidationMessage>
                             </div>
                             <div class="form-group">
                                 <label for="FullName" class="form-label mt-4">Full Name</label>
-                                <InputText id="lastName" class="form-control" placeholder="Full Name" @bind-Value="Actor.FullName" />
+                                <InputText class="form-control" placeholder="Full Name" @bind-Value="Actor.FullName" />
+                                <ValidationMessage For="@(()=>Actor.FullName)"></ValidationMessage>
                             </div>
                             <div class="form-group">
                                 <label for="Bio" class="form-label mt-4">Bio</label>
-                                <InputTextArea id="email" class="form-control" placeholder="About" @bind-Value="Actor.Bio" rows="3" />
+                                <InputTextArea class="form-control" placeholder="About" @bind-Value="Actor.Bio" rows="3" />
+                                <ValidationMessage For="@(()=>Actor.Bio)"></ValidationMessage>
                             </div>
                         </div>
                     </td>
                 </tr>
             </table>
-
-
             <hr />
             <div align="right">
                 <a class="btn btn-dark" href="/actor">Back</a>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button class="btn btn-primary" type="submit">Submit</button>
             </div>
 
         </fieldset>

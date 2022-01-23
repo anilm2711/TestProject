@@ -8,8 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EBazarModels.Models;
 using EBazarWebApi.Data;
-using EBazarWebApi.Data.Base;
-using EBazarWebApi.Data.Services;
+using Newtonsoft.Json;
 
 namespace EBazarWebApi.Controllers
 {
@@ -17,42 +16,44 @@ namespace EBazarWebApi.Controllers
     [ApiController]
     public class ActorsController : ControllerBase
     {
-        private ActorsService service;
+        private readonly AppDbContext _context;
+
         public ActorsController(AppDbContext context)
         {
-            service = new ActorsService(context);
+            _context = context;
         }
-
-        // GET: api/Actors
         [HttpGet]
-        public async Task<IEnumerable<Actor>> GetActors()
+        public string GetActors()
         {
-            Task<IEnumerable<Actor>> x = service.GetAllAsync();
-            return await x;
-
+            List<Actor> movie = _context.Actors.Take(5).Include(e=>e.Actors_Movies).ToList();
+            string json = JsonConvert.SerializeObject(movie, Formatting.Indented, new JsonSerializerSettings
+            { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+            return json;
         }
+        // GET: api/Actors
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<Actor>>> GetActors()
+        //{
+        //    return await _context.Actors.Include(e=>e.Actors_Movies).ToListAsync();
+        //}
+
         // GET: api/Actors/5
-        [HttpGet("{id:int}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Actor>> GetActor(int id)
         {
-            try
+            var actor = await _context.Actors.FindAsync(id);
+
+            if (actor == null)
             {
-                var actor = await service.GetByIdAsync(id);
-                if (actor == null)
-                {
-                    return NotFound();
-                }
-                return actor;
+                return NotFound();
             }
-            catch (Exception)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the Database");
-            }
+
+            return actor;
         }
 
         // PUT: api/Actors/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id:int}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> PutActor(int id, Actor actor)
         {
             if (id != actor.Id)
@@ -60,9 +61,11 @@ namespace EBazarWebApi.Controllers
                 return BadRequest();
             }
 
+            _context.Entry(actor).State = EntityState.Modified;
+
             try
             {
-                service.UpdateAsync(id, actor);
+                await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -72,7 +75,7 @@ namespace EBazarWebApi.Controllers
                 }
                 else
                 {
-                    return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving data from the Database");
+                    throw;
                 }
             }
 
@@ -84,35 +87,31 @@ namespace EBazarWebApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Actor>> PostActor(Actor actor)
         {
-            try
-            {
-                if (actor == null)
-                {
-                    return BadRequest();
-                }
-                await service.AddAsync(actor);
-                return CreatedAtAction(nameof(GetActor), new { id = actor.Id }, actor);
-            }
-            catch (Exception)
-            {
+            _context.Actors.Add(actor);
+            await _context.SaveChangesAsync();
 
-                throw;
-            }
-
+            return CreatedAtAction("GetActor", new { id = actor.Id }, actor);
         }
 
         // DELETE: api/Actors/5
-        [HttpDelete("{id:int}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteActor(int id)
         {
-            await service.DeleteAsync(id);
+            var actor = await _context.Actors.FindAsync(id);
+            if (actor == null)
+            {
+                return NotFound();
+            }
+
+            _context.Actors.Remove(actor);
+            await _context.SaveChangesAsync();
 
             return NoContent();
         }
 
         private bool ActorExists(int id)
         {
-            return service.IsExists(id);
+            return _context.Actors.Any(e => e.Id == id);
         }
     }
 }

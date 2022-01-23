@@ -16,11 +16,23 @@ namespace BlazorAppServer.Pages
         [Parameter]
         public string picUrl { get; set; } = string.Empty;
 
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
             Id = Id ?? "1";
             Actor =await service.GetResultByIdAsync($"api/Actors/{Id}");
             picUrl = Actor.ProfilePictureURL;
+        }
+
+        protected async Task HandleValidSubmit()
+        {
+            var result = await service.UpdateAsync($"api/Actors/{Id}",Actor);
+            if (result != null)
+            {
+                NavigationManager.NavigateTo("/actor");
+            }
         }
 
     }

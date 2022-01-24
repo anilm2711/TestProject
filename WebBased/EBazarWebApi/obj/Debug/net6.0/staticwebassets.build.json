@@ -1,11 +1,37 @@
 {
   "Version": 1,
-  "Hash": "w8nSErD1DBKHnh9kcD6axPgLjF8CQx9AiRjv2t68ck8=",
+  "Hash": "y6IF71CwqzO4Y3IZXI9yFMNU04sSIwjI2UdQ26Oorg0=",
   "Source": "EBazarWebApi",
   "BasePath": "_content/EBazarWebApi",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "EBazarWebApi\\wwwroot",
+      "Source": "EBazarWebApi",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\EBazarWebApi\\wwwroot\\",
+      "BasePath": "_content/EBazarWebApi",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\EBazarWebApi\\wwwroot\\Images\\3ebfe88d-1029-49c7-86c2-4110adf01ac7.jpg",
+      "SourceId": "EBazarWebApi",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\EBazarWebApi\\wwwroot\\",
+      "BasePath": "_content/EBazarWebApi",
+      "RelativePath": "Images/3ebfe88d-1029-49c7-86c2-4110adf01ac7.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\3ebfe88d-1029-49c7-86c2-4110adf01ac7.jpg"
+    }
+  ]
 }

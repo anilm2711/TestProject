@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBazarModels", "..\EBazarMo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBazarWebApi", "..\EBazarWebApi\EBazarWebApi.csproj", "{686CB0BD-6CAC-40F5-9D9C-EA1F9565FEB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKM.Component", "..\AKM.Component\AKM.Component.csproj", "{A0775918-79AA-4BC1-B703-2A076D3C7317}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AKM.Component", "..\AKM.Component\AKM.Component.csproj", "{A0775918-79AA-4BC1-B703-2A076D3C7317}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

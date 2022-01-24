@@ -6,7 +6,8 @@ namespace BlazorAppServer.Pages
 {
     public class EditActorBase:ComponentBase
     {
-        [Inject]
+
+           [Inject]
         public IActorService service { get; set; }
         public Actor Actor { get; set; } = new Actor();
 
@@ -18,6 +19,16 @@ namespace BlazorAppServer.Pages
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
+
+        ElementReference inputReference;
+        string message = string.Empty;
+        string imagePath = null;
+
+        string fileName = string.Empty;
+        string type = string.Empty;
+        string size = string.Empty;
+
+        Stream fileStream = null;
 
         protected override async Task OnInitializedAsync()
         {

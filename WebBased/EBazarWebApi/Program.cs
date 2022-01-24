@@ -11,6 +11,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionString")));
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", builder =>
+    builder.AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader());
+});
 builder.Services.AddScoped<IActorsService, ActorsService>();
 builder.Services.AddScoped<IProducersService, ProducersService>();
 builder.Services.AddScoped<ICinemasService,CinemasService>();
@@ -29,6 +36,12 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+//Cross-Origin Resource Sharing (CORS) - HTTP - MDN Web ...
+app.UseCors("CorsPolicy");
+
+//for image display
+app.UseStaticFiles(); 
 //Seed database
 AppDbInitializer.Seed(app);
 //AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();

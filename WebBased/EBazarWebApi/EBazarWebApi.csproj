@@ -20,4 +20,9 @@
     <ProjectReference Include="..\EBazarModels\EBazarModels.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Development\unsafe_uploads\" />
+    <Folder Include="wwwroot\Images\" />
+  </ItemGroup>
+
 </Project>

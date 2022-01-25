@@ -48,3 +48,5 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Ne
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\AutoMapper.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Microsoft.AspNetCore.Components.DataAnnotations.Validation.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Tewr.Blazor.FileReader.dll

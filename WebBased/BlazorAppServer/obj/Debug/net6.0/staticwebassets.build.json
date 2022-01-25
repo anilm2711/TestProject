@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dtqazGWJNc0HctfPFK/KD2oEPlKCTNLCE3SceXE8O4o=",
+  "Hash": "WAsNIzM9dF4gEVOJj+CcscLmQ/k4smFMdr8hoqEjrUo=",
   "Source": "BlazorAppServer",
   "BasePath": "_content/BlazorAppServer",
   "Mode": "Default",
@@ -16,6 +16,40 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Anil\\.nuget\\packages\\tewr.blazor.filereader\\3.3.1.21360\\staticwebassets\\FileReaderComponent.js",
+      "SourceId": "Tewr.Blazor.FileReader",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\Anil\\.nuget\\packages\\tewr.blazor.filereader\\3.3.1.21360\\staticwebassets\\",
+      "BasePath": "_content/Tewr.Blazor.FileReader",
+      "RelativePath": "FileReaderComponent.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Anil\\.nuget\\packages\\tewr.blazor.filereader\\3.3.1.21360\\staticwebassets\\FileReaderComponent.js"
+    },
+    {
+      "Identity": "C:\\Users\\Anil\\.nuget\\packages\\tewr.blazor.filereader\\3.3.1.21360\\staticwebassets\\FileReaderComponent.js.map",
+      "SourceId": "Tewr.Blazor.FileReader",
+      "SourceType": "Package",
+      "ContentRoot": "C:\\Users\\Anil\\.nuget\\packages\\tewr.blazor.filereader\\3.3.1.21360\\staticwebassets\\",
+      "BasePath": "_content/Tewr.Blazor.FileReader",
+      "RelativePath": "FileReaderComponent.js.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\Anil\\.nuget\\packages\\tewr.blazor.filereader\\3.3.1.21360\\staticwebassets\\FileReaderComponent.js.map"
+    },
     {
       "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\BlazorAppServer\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BlazorAppServer.styles.css",
       "SourceId": "BlazorAppServer",

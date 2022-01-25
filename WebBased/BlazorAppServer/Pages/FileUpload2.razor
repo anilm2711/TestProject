@@ -1,10 +1,12 @@
 ﻿@page "/file-upload-2"
 @using System.Linq
 @using System.Net.Http.Headers
+@using BlazorAppServer.Services
 @using Microsoft.Extensions.Logging
 @using BlazorAppServer.Base
 @inject HttpClient Http
 @inject ILogger<FileUpload2> Logger
+@inject IFileUploadService service
 
 <h1>Upload Files</h1>
 
@@ -26,11 +28,17 @@
                         File: @file.Name
                         <br>
                         @if (FileUpload(uploadResults, file.Name, Logger,
-                           out var result))
+                       out var result))
                         {
                             <span>
                                 Stored File Name: @result.StoredFileName
                             </span>
+                            <div class="col-4">
+                                @if (file != null)
+                                {
+                                    <img style="width:150px" src="@result.FileName" alt=@result.FileName />
+                                }
+                            </div>
                         }
                         else
                         {
@@ -43,6 +51,7 @@
                 }
             </ul>
         </div>
+
     </div>
 }
 
@@ -69,10 +78,10 @@
             {
                 try
                 {
-                    var fileContent = 
+                    var fileContent =
                         new StreamContent(file.OpenReadStream(maxFileSize));
 
-                    fileContent.Headers.ContentType = 
+                    fileContent.Headers.ContentType =
                         new MediaTypeHeaderValue(file.ContentType);
 
                     files.Add(new() { Name = file.Name });
@@ -87,23 +96,23 @@
                 catch (Exception ex)
                 {
                     Logger.LogInformation(
-                        "{FileName} not uploaded (Err: 6): {Message}", 
+                        "{FileName} not uploaded (Err: 6): {Message}",
                         file.Name, ex.Message);
 
                     uploadResults.Add(
                         new()
-                        {
-                            FileName = file.Name, 
-                            ErrorCode = 6, 
-                            Uploaded = false
-                        });
+                            {
+                                FileName = file.Name,
+                                ErrorCode = 6,
+                                Uploaded = false
+                            });
                 }
             }
         }
 
         if (upload)
         {
-            var response = await Http.PostAsJsonAsync("api/Filesave", content);
+            var response = await service.UploadAsync("api/Filesave", content);
 
             var newUploadResults = await response.Content
                 .ReadFromJsonAsync<IList<UploadResult>>();

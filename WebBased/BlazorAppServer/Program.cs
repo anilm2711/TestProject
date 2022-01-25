@@ -15,6 +15,10 @@ builder.Services.AddHttpClient<IMovieService, MovieService>(client => client.Bas
 builder.Services.AddHttpClient<IOrderService, OrderService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
 builder.Services.AddHttpClient<ICinemaService, CinemaService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
 builder.Services.AddHttpClient<ICinemaService, CinemaService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
+builder.Services.AddHttpClient<IFileUploadService,FileUploadService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
+
+
+
 
 var app = builder.Build();
 

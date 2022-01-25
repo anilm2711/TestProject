@@ -8,7 +8,7 @@ namespace EBazarModels.Models
         public int Id { get; set; }
 
         [Display(Name = "Profile Picture")]
-        [Required(ErrorMessage = "Profile Picture is required")]
+        //[Required(ErrorMessage = "Profile Picture is required")]
         public string ProfilePictureURL { get; set; }
 
         [Display(Name = "Full Name")]

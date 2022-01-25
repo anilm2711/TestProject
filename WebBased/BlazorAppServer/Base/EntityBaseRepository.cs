@@ -13,12 +13,17 @@ namespace BlazorAppServer.Base
             _context = context;
         }
 
-        public Task AddAsync(T entity)
+        public async Task<HttpResponseMessage> AddAsync(string uri,T entity)
         {
-            throw new NotImplementedException();
+            return await _context.PostAsJsonAsync<T>(uri, entity);
         }
 
-        public Task DeleteAsync(int id)
+        public async Task<HttpResponseMessage> DeleteAsync(string uri)
+        {
+           return await _context.DeleteAsync(uri);
+        }
+
+        public Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties)
         {
             throw new NotImplementedException();
         }

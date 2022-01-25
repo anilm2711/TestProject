@@ -1,4 +1,5 @@
 ﻿@page "/editactor/{id}"
+@page "/editactor"
 
 @inherits EditActorBase
 
@@ -8,22 +9,22 @@
 }
 else
 {
-    <EditForm Model="@Actor" OnValidSubmit=@HandleValidSubmit>
-        @*<DataAnnotationsValidator></DataAnnotationsValidator>*@
+    <EditForm Model="@Actor"  OnValidSubmit=@HandleValidSubmit>
+        <DataAnnotationsValidator></DataAnnotationsValidator>
         @*<ObjectGraphDataAnnotationsValidator></ObjectGraphDataAnnotationsValidator>*@
         <fieldset>
             <table class="table" style="width:100%">
                 <tr>
                     <td style="width:30%">
-                        <div class="rounded-circle" align="center">
-                            <img src="@picUrl" alt="Image" height="250" width="230" align="middle">
+                        <div align="center">
+                            <img src="@picUrl" alt="No Image" class="rounded-circle" align="middle">
                         </div>
                     </td>
                     <td style="width:80%">
                         <div align="left">
                             <div class="form-group">
                                 <label for="ProfilePictureURL" class="form-label mt-4">ProfilePictureURL </label>
-                                <InputText class="form-control" placeholder="Pic url" @bind-Value="@picUrl" />
+                                <InputText class="form-control" placeholder="Pic url" @bind-Value="@picUrl"/>
                                 <ValidationMessage For="@(()=>Actor.ProfilePictureURL)"></ValidationMessage>
                             </div>
                             <div class="form-group">

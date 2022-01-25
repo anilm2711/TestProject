@@ -1,4 +1,5 @@
 ﻿
+using BlazorAppServer.Services;
 using EBazarModels.Models;
 using Microsoft.AspNetCore.Components;
 
@@ -6,6 +7,8 @@ namespace BlazorAppServer.Pages
 {
     public class DisplayActorBase:ComponentBase
     {
+        [Inject]
+        public IActorService service { get; set; }
         [Parameter]
         public Actor Actor { get; set; }
 
@@ -17,10 +20,25 @@ namespace BlazorAppServer.Pages
         [Parameter]
         public EventCallback<bool> OnActorSelection { get; set; }
 
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
+
         protected async Task CheckBoxChanged(ChangeEventArgs e)
         {
             IsSelected = (bool)e.Value;
             await OnActorSelection.InvokeAsync(IsSelected);
         }
+
+        protected async Task DeleteActor()
+        {
+            string Id = Convert.ToString(Actor.Id);
+            var result = service.DeleteAsync($"api/Actors/{Id}");
+            if (result != null)
+            {
+                
+                NavigationManager.NavigateTo("/actor",true);
+            }
+        }
+
     }
 }

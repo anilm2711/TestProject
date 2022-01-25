@@ -32,17 +32,35 @@ namespace BlazorAppServer.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            Id = Id ?? "1";
-            Actor =await service.GetResultByIdAsync($"api/Actors/{Id}");
-            picUrl = Actor.ProfilePictureURL;
+            int.TryParse(Id, out int actorId);
+            if (actorId != 0)
+            {
+                Actor = await service.GetResultByIdAsync($"api/Actors/{Id}");
+                picUrl = Actor.ProfilePictureURL;
+            }
+            else
+            {
+                Actor = new Actor();
+                Actor.ProfilePictureURL = picUrl;
+            }
+            
         }
 
         protected async Task HandleValidSubmit()
         {
-            var result = await service.UpdateAsync($"api/Actors/{Id}",Actor);
+            Actor.ProfilePictureURL = picUrl;
+            HttpResponseMessage result;
+            if (Actor.Id > 0)
+            {
+                result = await service.UpdateAsync($"api/Actors/{Id}", Actor);
+            }
+            else
+            {
+                result = await service.AddAsync("api/Actors", Actor);
+            }
             if (result != null)
             {
-                NavigationManager.NavigateTo("/actor");
+                NavigationManager.NavigateTo("/actor", true);
             }
         }
 

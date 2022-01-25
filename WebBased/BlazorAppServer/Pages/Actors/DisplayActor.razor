@@ -1,6 +1,6 @@
 ﻿@inherits DisplayActorBase
 <tr>
-    <td>
+    <td width="3%" >
         <input type="checkbox" @onchange="CheckBoxChanged" checked=@IsSelected />
     </td>
     <td width="20%" class="align-middle">
@@ -10,11 +10,11 @@
     <td width="20%" class="align-top"> @Actor.Bio</td>
     @if (ShowFooter == true)
     {
-        <td class="align-middle">
+        <td class="align-middle" width="30%">
             <div class="w-75 btn-group" role="group">
                 <a class="btn  btn-dark" href="@($"actordetails/{Actor.Id}")">Details</a>
                 <a class="btn btn-dark" href="@($"editactor/{Actor.Id}")">  Edit</a>
-                <a class="btn  btn-dark">Delete</a>
+                <a class="btn  btn-dark" @onclick="DeleteActor" >Delete</a>
             </div>
         </td>
     }

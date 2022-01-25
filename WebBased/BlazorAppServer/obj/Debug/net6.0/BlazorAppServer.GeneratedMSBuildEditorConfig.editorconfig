@@ -19,48 +19,48 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/ActorDetails.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0b3JEZXRhaWxzLnJhem9y
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Actors/ActorDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0b3JzXEFjdG9yRGV0YWlscy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/ActorList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0b3JMaXN0LnJhem9y
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Actors/ActorList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0b3JzXEFjdG9yTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/CinemaDetails.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2luZW1hRGV0YWlscy5yYXpvcg==
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Actors/DisplayActor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0b3JzXERpc3BsYXlBY3Rvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/CinemaList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2luZW1hTGlzdC5yYXpvcg==
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Actors/EditActor.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0b3JzXEVkaXRBY3Rvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/DisplayActor.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlzcGxheUFjdG9yLnJhem9y
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Cinemas/CinemaDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2luZW1hc1xDaW5lbWFEZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/EditActor.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRWRpdEFjdG9yLnJhem9y
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Cinemas/CinemaList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2luZW1hc1xDaW5lbWFMaXN0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/FileUpload2.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsZVVwbG9hZDIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/MovieDetails.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVEZXRhaWxzLnJhem9y
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Movies/MovieDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzXE1vdmllRGV0YWlscy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/MovieList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVMaXN0LnJhem9y
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Movies/MovieList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzXE1vdmllTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/ProducerDetails.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjZXJEZXRhaWxzLnJhem9y
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Producers/ProducerDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjZXJzXFByb2R1Y2VyRGV0YWlscy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/ProducerList.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjZXJMaXN0LnJhem9y
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Producers/ProducerList.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjZXJzXFByb2R1Y2VyTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/_Imports.razor]

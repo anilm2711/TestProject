@@ -25,7 +25,7 @@ namespace EBazarWebApi.Controllers
         [HttpGet]
         public string GetActors()
         {
-            List<Actor> movie = _context.Actors.Take(5).Include(e=>e.Actors_Movies).ToList();
+            List<Actor> movie = _context.Actors.Take(50).Include(e=>e.Actors_Movies).ToList();
             string json = JsonConvert.SerializeObject(movie, Formatting.Indented, new JsonSerializerSettings
             { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
             return json;

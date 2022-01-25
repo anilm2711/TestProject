@@ -31,5 +31,11 @@ namespace BlazorAppServer.Pages
             }
 
         }
+
+        protected async Task ActorDeleted()
+        {
+            Task<string> json = service.GetResultSerialize("api/Actors");
+            Actors = JsonConvert.DeserializeObject<List<Actor>>(json.Result, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+        }
     }
 }

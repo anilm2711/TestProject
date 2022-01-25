@@ -20,6 +20,9 @@ namespace BlazorAppServer.Pages
         [Parameter]
         public EventCallback<bool> OnActorSelection { get; set; }
 
+        [Parameter]
+        public EventCallback<int> OnActorDeleted { get; set; }
+
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
@@ -33,11 +36,8 @@ namespace BlazorAppServer.Pages
         {
             string Id = Convert.ToString(Actor.Id);
             var result = service.DeleteAsync($"api/Actors/{Id}");
-            if (result != null)
-            {
-                
-                NavigationManager.NavigateTo("/actor",true);
-            }
+            await OnActorDeleted.InvokeAsync(Actor.Id);
+            
         }
 
     }

@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/AKM.Component/CustomeValidators/Confirm.razor]
+build_metadata.AdditionalFiles.TargetPath = Q3VzdG9tZVZhbGlkYXRvcnNcQ29uZmlybS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/AKM.Component/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

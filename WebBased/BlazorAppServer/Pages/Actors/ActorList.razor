@@ -3,28 +3,30 @@
 
 <div class="container p-3">
     <div align="right">
+        <h6 class="col-6 text-end">Selected Actor Count: @SelectedActorCount</h6>
+        <hr />
         <div class="col-6 text-end">
             <a class="btn btn-primary" href="editactor">
                 <i class="bi bi-plus-circle"></i> &nbsp; Add New Actor
             </a>
         </div>
-        <h4>Selected Actor Count: @SelectedActorCount</h4>
     </div>
-    <br /><br />
     @if (Actors == null)
     {
         <div class="spinner"></div>
     }
     else
-    { <div align="left" >
-        <input type="checkbox" id="showFooter" @bind="ShowFooter" />
-        <label for="showFooter">Show More</label>
-    </div style="position:fixed">
+    {
+        <div align="left">
+            <input type="checkbox" id="showFooter" @bind="ShowFooter" />
+            <label for="showFooter">Show More</label>
+        </div>
         <table class="table table-bordered table-striped" style="width:100%">
             <tbody>
                 @foreach (var obj in Actors)
                 {
-                    <DisplayActor Actor="obj" ShowFooter="ShowFooter" OnActorSelection="ActorSelectionChanged"></DisplayActor>
+                    <DisplayActor Actor="obj" ShowFooter="ShowFooter" OnActorSelection="ActorSelectionChanged"
+                          OnActorDeleted="ActorDeleted"></DisplayActor>
                 }
             </tbody>
         </table>

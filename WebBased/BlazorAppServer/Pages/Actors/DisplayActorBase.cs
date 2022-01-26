@@ -38,14 +38,17 @@ namespace BlazorAppServer.Pages
         protected async Task DeleteActor()
         {
             confirmBase.Show();
-            //string Id = Convert.ToString(Actor.Id);
-            //var result = service.DeleteAsync($"api/Actors/{Id}");
-            //await OnActorDeleted.InvokeAsync(Actor.Id);
-            
+           
         }
 
-        protected async Task ConfirmDelete_Click()
+        protected async Task ConfirmDelete_Click(bool isDeleteConfirmed)
         {
+            if(isDeleteConfirmed)
+            {
+                string Id = Convert.ToString(Actor.Id);
+                await service.DeleteAsync($"api/Actors/{Id}");
+                await OnActorDeleted.InvokeAsync(Actor.Id);
+            }
 
         }
 

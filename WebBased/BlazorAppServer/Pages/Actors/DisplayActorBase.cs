@@ -1,4 +1,5 @@
 ﻿
+using AKM.Component.CustomeValidators;
 using BlazorAppServer.Services;
 using EBazarModels.Models;
 using Microsoft.AspNetCore.Components;
@@ -26,6 +27,8 @@ namespace BlazorAppServer.Pages
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
+        public ConfirmBase confirmBase { get; set; }    
+
         protected async Task CheckBoxChanged(ChangeEventArgs e)
         {
             IsSelected = (bool)e.Value;
@@ -34,10 +37,16 @@ namespace BlazorAppServer.Pages
 
         protected async Task DeleteActor()
         {
-            string Id = Convert.ToString(Actor.Id);
-            var result = service.DeleteAsync($"api/Actors/{Id}");
-            await OnActorDeleted.InvokeAsync(Actor.Id);
+            confirmBase.Show();
+            //string Id = Convert.ToString(Actor.Id);
+            //var result = service.DeleteAsync($"api/Actors/{Id}");
+            //await OnActorDeleted.InvokeAsync(Actor.Id);
             
+        }
+
+        protected async Task ConfirmDelete_Click()
+        {
+
         }
 
     }

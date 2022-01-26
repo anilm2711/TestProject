@@ -50,3 +50,12 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\Bl
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\ref\BlazorAppServer.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.pdb
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.genruntimeconfig.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\AKM.Component.staticwebassets.runtime.json
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\Microsoft.JSInterop.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\AKM.Component.dll
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\AKM.Component.pdb

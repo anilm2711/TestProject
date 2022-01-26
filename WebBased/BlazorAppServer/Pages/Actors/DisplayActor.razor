@@ -1,4 +1,5 @@
-﻿@inherits DisplayActorBase
+﻿@using AKM.Component.CustomeValidators
+@inherits DisplayActorBase
 <tr>
     <td width="3%" >
         <input type="checkbox" @onchange="CheckBoxChanged" checked=@IsSelected />
@@ -18,4 +19,7 @@
             </div>
         </td>
     }
-</tr>     
+</tr> 
+<Confirm @ref="confirmBase" ConfirmationChanged="ConfirmDelete_Click" ConfirmationMessage=@($"Are you sure you want to delete \"{Actor.FullName}\"")>
+
+</Confirm>

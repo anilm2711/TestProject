@@ -1,12 +1,31 @@
 {
   "Version": 1,
-  "Hash": "WAsNIzM9dF4gEVOJj+CcscLmQ/k4smFMdr8hoqEjrUo=",
+  "Hash": "igglIITLi1BsAIT5kUhCtE+iNWxdJV7fPGGwpszq1QY=",
   "Source": "BlazorAppServer",
   "BasePath": "_content/BlazorAppServer",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\AKM.Component.csproj",
+      "Version": 2,
+      "Source": "AKM.Component",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
   "DiscoveryPatterns": [
+    {
+      "Name": "AKM.Component\\wwwroot",
+      "Source": "AKM.Component",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\wwwroot\\",
+      "BasePath": "_content/AKM.Component",
+      "Pattern": "**"
+    },
     {
       "Name": "BlazorAppServer\\wwwroot",
       "Source": "BlazorAppServer",
@@ -49,6 +68,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Anil\\.nuget\\packages\\tewr.blazor.filereader\\3.3.1.21360\\staticwebassets\\FileReaderComponent.js.map"
+    },
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\AKM.Component.bundle.scp.css",
+      "SourceId": "AKM.Component",
+      "SourceType": "Project",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/AKM.Component",
+      "RelativePath": "AKM.Component.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\AKM.Component.bundle.scp.css"
+    },
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\wwwroot\\background.png",
+      "SourceId": "AKM.Component",
+      "SourceType": "Project",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\wwwroot\\",
+      "BasePath": "_content/AKM.Component",
+      "RelativePath": "background.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\background.png"
+    },
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\wwwroot\\exampleJsInterop.js",
+      "SourceId": "AKM.Component",
+      "SourceType": "Project",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\AKM.Component\\wwwroot\\",
+      "BasePath": "_content/AKM.Component",
+      "RelativePath": "exampleJsInterop.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\exampleJsInterop.js"
     },
     {
       "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\BlazorAppServer\\obj\\Debug\\net6.0\\scopedcss\\bundle\\BlazorAppServer.styles.css",

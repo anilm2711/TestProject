@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AKM.Component\AKM.Component.csproj" />
     <ProjectReference Include="..\EBazarModels\EBazarModels.csproj" />
   </ItemGroup>
 

@@ -25,20 +25,22 @@ namespace BlazorAppServer.Services
 
         [Display(Name = "Movie start date")]
         [Required(ErrorMessage = "Start date is required")]
-        public DateTime StartDate { get; set; }
+        public DateTime StartDate { get; set; } = DateTime.Now;
 
         [Display(Name = "Movie end date")]
         [Required(ErrorMessage = "End date is required")]
-        public DateTime EndDate { get; set; }
+        public DateTime EndDate { get; set; } = DateTime.Now;
 
         [Display(Name = "Select a category")]
         [Required(ErrorMessage = "Movie category is required")]
+        [MinLength(1)]
+        [MaxLength(10)]
         public MovieCategory MovieCategory { get; set; }
 
         //Relationships
         [Display(Name = "Select actor(s)")]
         [Required(ErrorMessage = "Movie actor(s) is required")]
-        public List<int> ActorIds { get; set; }
+        public List<int> ActorIds { get; set; } = new List<int>();
 
         [Display(Name = "Select a cinema")]
         [Required(ErrorMessage = "Movie cinema is required")]

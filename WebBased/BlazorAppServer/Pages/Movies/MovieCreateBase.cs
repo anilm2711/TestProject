@@ -17,7 +17,6 @@ namespace BlazorAppServer.Pages.Movies
         public ICinemaService serviceCinema { get; set; }
         public IEnumerable<Cinema> Cinemas { get; set; }
         public NewMovieVM newMovieVM { get; set; } = new NewMovieVM();
-        public Movie Movie { get; set; } = new Movie();
 
         public IEnumerable<Actor> Actors { get; set; }
         public IEnumerable<Producer> Producers { get; set; }
@@ -30,13 +29,24 @@ namespace BlazorAppServer.Pages.Movies
         {
             Task<string> json = service.GetResultSerialize("api/Actors");
             Actors = JsonConvert.DeserializeObject<List<Actor>>(json.Result, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
-
             Producers = (await serviceProducer.GetResult("api/Producers"));
             Cinemas = (await serviceCinema.GetResult("api/Cinemas"));
+            NewMovieDropdownsVM newMovieDropdownsVM = new NewMovieDropdownsVM
+            {
+                Actors = Actors,
+                Producers = Producers,
+                Cinemas = Cinemas
+            };
         }
         protected async Task HandleValidSubmit()
         {
             navigationManager.NavigateTo("/", true);
+        }
+
+        protected void  OnActorSelectDropDownChange(ChangeEventArgs e)
+        {
+            string g = Convert.ToString( e.Value);
+            
         }
     }
 }

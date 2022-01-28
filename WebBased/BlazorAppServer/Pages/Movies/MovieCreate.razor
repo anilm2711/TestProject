@@ -22,12 +22,12 @@
                                 <ValidationMessage For="@(()=>newMovieVM.Name)"></ValidationMessage>
                             </div>
                             <div class="form-group">
-                                <label for="StartDate" class="form-label mt-4">StartDate</label>
+                                <label for="StartDate" class="form-label mt-4">Start Date</label>
                                 <InputDate @bind-Value="newMovieVM.StartDate" class="form-control" />
                                 <ValidationMessage For="@(()=>newMovieVM.StartDate)"></ValidationMessage>
                             </div>
                             <div class="form-group">
-                                <label for="EndDate" class="form-label mt-4">EndDate</label>
+                                <label for="EndDate" class="form-label mt-4">End Date</label>
                                 <InputDate @bind-Value="newMovieVM.EndDate" class="form-control" />
                                 <ValidationMessage For="@(()=>newMovieVM.EndDate)" class="text-danger"></ValidationMessage>
                             </div>
@@ -85,14 +85,14 @@
                             {
                                 <div class="form-group">
                                     <label for="ActorIds" class="form-label mt-4">Actors</label>
-                                    <InputSelect @bind-Value="newMovieVM.ActorIds" class="form-select">
+                                    <select multiple="newMovieVM.ActorIds" class="form-select" @onchange="OnActorSelectDropDownChange">
                                         @foreach (Actor actr in Actors)
                                         {
-                                        <option value="@actr.Id">@actr.FullName</option>
+                                            <option value="@actr.Id">@actr.FullName</option>
                                         }
-                                </InputSelect>
-                                <ValidationMessage For="@(()=>newMovieVM.ActorIds)" class="text-danger"></ValidationMessage>
-                            </div>
+                                    </select>
+                                    <ValidationMessage For="@(()=>newMovieVM.ActorIds)" class="text-danger"></ValidationMessage>
+                                </div>
                             }
                         </div>
                         <div class="col-md-12">
@@ -110,7 +110,7 @@
 
                     <div class="form-group">
                         <input type="submit" value="Create" class="btn btn-outline-success float-right" />
-                        <a class="btn btn-outline-secondary" href="Index">Show all</a>
+                        <a class="btn btn-outline-secondary" href="/">Show all</a>
                     </div>
 
                 </EditForm>

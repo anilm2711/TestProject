@@ -17,6 +17,8 @@ namespace BlazorAppServer.Pages
             //Actors = (await service.GetResult("api/Actors")).ToList();
             Task<string> json = service.GetResultSerialize("api/Actors");
             Actors = JsonConvert.DeserializeObject<List<Actor>>(json.Result, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+
+
         }
         protected int SelectedActorCount { get; set; }=0;
         protected void ActorSelectionChanged(bool IsSelected)

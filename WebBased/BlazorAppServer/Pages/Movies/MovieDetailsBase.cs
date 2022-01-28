@@ -1,6 +1,8 @@
 ﻿using BlazorAppServer.Services;
 using EBazarModels.Models;
 using Microsoft.AspNetCore.Components;
+using BlazorAppServer.Pages.Actors;
+using Newtonsoft.Json;
 
 namespace BlazorAppServer.Pages
 {
@@ -8,6 +10,9 @@ namespace BlazorAppServer.Pages
     {
         [Parameter]
         public string Id { get; set; }
+
+        public bool ShowFooter { get; set; } = true;
+
         [Inject]
         public IMovieService service { get; set; }
         public Movie result { get; set; }
@@ -19,8 +24,16 @@ namespace BlazorAppServer.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            Id = Id ?? "1";
-            result = (await service.GetResultByIdAsync($"api/Movies/{Id}"));
+            try
+            {
+                Id = Id ?? "1";
+                Task<string> movieSrz = service.GetResultSerialize($"api/Movies/{Id}");
+                result = JsonConvert.DeserializeObject<Movie>(movieSrz.Result, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         protected void Button_Click()
@@ -36,6 +49,20 @@ namespace BlazorAppServer.Pages
                 CssClass = null;
             }
         }
+        protected int SelectedActorCount { get; set; } = 0;
+        protected void ActorSelectionChanged(bool IsSelected)
+        {
+            if (IsSelected)
+            {
+                SelectedActorCount++;
+            }
+            else
+            {
+                SelectedActorCount--;
+            }
+
+        }
+
     }
 
 }

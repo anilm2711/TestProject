@@ -35,16 +35,23 @@ namespace EBazarWebApi.Controllers
 
         // GET: api/Movies/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Movie>> GetMovie(int id)
+        public async Task<ActionResult<string>> GetMovieById(int id)
         {
-            var movie = await _context.Movies.FindAsync(id);
+            var movieDetails = await _context.Movies
+                .Include(c => c.Cinema)
+                .Include(p => p.Producer)
+                .Include(am => am.Actors_Movies).ThenInclude(a => a.Actor)
+                .FirstOrDefaultAsync(n => n.Id == id);
 
-            if (movie == null)
+            string json = JsonConvert.SerializeObject(movieDetails, Formatting.Indented, new JsonSerializerSettings
+            { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+
+            if (movieDetails == null)
             {
                 return NotFound();
             }
 
-            return movie;
+            return json;
         }
 
         // PUT: api/Movies/5

@@ -2,6 +2,13 @@
 @inherits MovieListBase
 
 <div class="container p-3">
+    <div align="right">
+        <div class="col-6 text-end">
+            <a class="btn btn-primary" href="moviecreate">
+                <i class="bi bi-plus-circle"></i> &nbsp; Add New Movie
+            </a>
+        </div>
+    </div>
     @if (resultList == null)
     {
         <div class="spinner"></div>

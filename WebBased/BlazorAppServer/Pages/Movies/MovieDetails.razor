@@ -1,5 +1,6 @@
 ﻿@page "/moviedetails/{id}"
 @page "/moviedetails"
+@using BlazorAppServer.Pages.Actors
 @inherits MovieDetailsBase
 
 @if (result == null)
@@ -8,42 +9,86 @@
 }
 else
 {
+    <div class="row"> 
+        <div class="col-md-8 offset-2">
+            <div class="card mb-12">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @result.Name
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="@result.ImageURL" width="100%" alt="@result.Name">
+                    </div>
+                    <div class="col-md-8" align="left">
+                        <div class="card-body">
+                            <p class="card-text">@result.Description</p>
+                            <p class="card-text">
+                                <b>Cinema: </b>
+                                <a class="btn btn-primary mx-2" href="@($"cinemadetails/{result.CinemaId}")">
+                                    <i class="bi bi-pencil-square"></i> @result.Cinema.Name
+                                </a>
+                            </p>
+                            <p class="card-text">
+                                <b>Producer: </b>
+                                <a class="btn btn-primary mx-2" href="@($"/producerdetails/{result.ProducerId}")">
+                                    <i class="bi bi-pencil-square"></i>   @result.Producer.FullName
+                                </a>
+                            </p>
+                            <p class="card-text"><b>Category: </b>@result.MovieCategory</p>
+                            <p class="card-text"><b>Start Date: </b>@result.StartDate.ToString("dd MMM yy")</p>
+                            <p class="card-text"><b>End Date: </b>@result.EndDate.ToString("dd MMM yy")</p>
+                            <p class="card-text ">
+                                <b>Status: </b>
+                                @if (DateTime.Now >= result.StartDate && DateTime.Now <= result.EndDate)
+                                {
+                                    <span class="badge bg-success text-white">AVAILABLE</span>
+                                }
+                                else if (DateTime.Now > result.EndDate)
+                                {
+                                    <span class="badge bg-danger text-white">EXPIRED</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-primary text-white">UPCOMING</span>
+                                }
+                            </p>
+                            <p class="card-text">
+                                <b>Actors: </b>
+                                <hr />
+                                <div class="row">
+                                    @foreach (var actor in result.Actors_Movies)
+                                    {
+                                        <div class="column text-center">
+                                            <img class="border-info rounded-circle" src="@actor.Actor.ProfilePictureURL" style="max-width: 150px" />
+                                            <br />
+                                             <a class="btn  btn-dark" href="@($"actordetails/{actor.Actor.Id}")">@actor.Actor.FullName</a>
+                                        </div>
+                                    }
+                                </div>
+                            </p>
 
-    <div class="card border-primary mb-5" style="max-width:100%;">
-        <h3 class="card-header ">@result.Name</h3>
-        <div class="card-body">
-            <img src="@result.ImageURL" alt="@result.Name" height="300" width="250" align="middle">
-            <h4 class="card-title">@result.Description</h4>
-            <h4 class="card-title">
-                Availability:
-                @* @if(@result.StartDate>DateTime.Now)
-                    {
-                    @movieavailability = "Coming";
-                    }
-                    else if(@result.StartDate<DateTime.Now)
-                    {
-                    @movieavailability = "In Cinema Now";
-                    }
-                *@
-            </h4>
-        </div>
-        <div>
-            <h4 class="card-title">@result.EndDate</h4>
-            <h4 class="card-title">@result.MovieCategory</h4>
-            <h4 class="card-title">
-                Price:@result.Price.ToString("c")
-            </h4>
-            <a class="btn btn-dark mx-2" @onclick="@Button_Click">@ButtonText </a>
-            <p class="card-text"></p>
-        </div>
-
-
-        <div class="card-footer @CssClass">
-            <a class="btn btn-dark mx-2" href="\">Back</a>
-            <a class="btn btn-dark mx-2"> Edit</a>
-            <a class="btn btn-dark mx-2"> Delete</a>
-
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-footer">
+                            <p class="card-text">
+                                <a class="btn btn-outline-primary float-right" href="/">
+                                    Back to List
+                                </a>
+                                <a class="btn btn-success text-white  @((DateTime.Now > result.EndDate) ? "disabled" : "")"
+                               asp-controller="Orders"
+                               asp-action="AddItemToShoppingCart" asp-route-id="@result.Id"><i class="bi bi-cart-plus"></i> Add to Cart (Price @result.Price.ToString("c"))</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 }

@@ -1,0 +1,124 @@
+﻿@page "/moviecreate"
+@using EBazarModels.Data.Enum
+
+@inherits MovieCreateBase
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h4>Create a new movie</h4>
+        </p>
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <EditForm Model="@newMovieVM" OnInvalidSubmit="@HandleValidSubmit">
+                    @*<div validation-summary="ModelOnly" class="text-danger"></div>*@
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Name" class="form-label mt-4">Name</label>
+                                <InputText @bind-Value="newMovieVM.Name" class="form-control" />
+                                <ValidationMessage For="@(()=>newMovieVM.Name)"></ValidationMessage>
+                            </div>
+                            <div class="form-group">
+                                <label for="StartDate" class="form-label mt-4">StartDate</label>
+                                <InputDate @bind-Value="newMovieVM.StartDate" class="form-control" />
+                                <ValidationMessage For="@(()=>newMovieVM.StartDate)"></ValidationMessage>
+                            </div>
+                            <div class="form-group">
+                                <label for="EndDate" class="form-label mt-4">EndDate</label>
+                                <InputDate @bind-Value="newMovieVM.EndDate" class="form-control" />
+                                <ValidationMessage For="@(()=>newMovieVM.EndDate)" class="text-danger"></ValidationMessage>
+                            </div>
+                            <div class="form-group">
+                                <label for="Price" class="form-label mt-4">Price</label>
+                                <InputNumber @bind-Value="newMovieVM.Price" class="form-control" />
+                                <ValidationMessage For="@(()=>newMovieVM.Price)"></ValidationMessage>
+                            </div>
+                            <div class="form-group">
+                                <label for="ImageURL" class="form-label mt-4">ImageURL</label>
+                                <InputText @bind-Value="newMovieVM.ImageURL" class="form-control" />
+                                <ValidationMessage For="@(()=>newMovieVM.ImageURL)"></ValidationMessage>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            @if (Cinemas != null)
+                            {
+                                <div class="form-group">
+                                    <label for="CinemaId" class="form-label mt-4">CinemaId</label>
+                                    <InputSelect @bind-Value="newMovieVM.CinemaId" class="form-select">
+                                        @foreach (Cinema cine in Cinemas)
+                                        {
+                                        <option value="@cine.Id">@cine.Name</option>
+                                        }
+                                </InputSelect>
+                                <ValidationMessage For="@(()=>newMovieVM.CinemaId)"></ValidationMessage>
+                            </div>
+                            }
+                            <div class="form-group">
+                                <label for="MovieCategory" class="form-label mt-4">MovieCategory</label>
+                                <InputSelect @bind-Value="newMovieVM.MovieCategory" class="form-select">
+                                    @foreach (var mc in Enum.GetValues(typeof(MovieCategory)))
+                                    {
+                                        <option>@mc</option>
+                                    }
+                                </InputSelect>
+
+                                <ValidationMessage For="@(()=>newMovieVM.MovieCategory)"></ValidationMessage>
+                            </div>
+                            @if (Producers != null)
+                            {
+                                <div class="form-group">
+                                    <label for="ProducerId" class="form-label mt-4">Producer</label>
+                                    <InputSelect @bind-Value="newMovieVM.ProducerId" class="form-select">
+                                        @foreach (Producer produ in Producers)
+                                        {
+                                        <option value="@produ.Id">@produ.FullName</option>
+                                        }
+                                </InputSelect>
+
+                                <ValidationMessage For="@(()=>newMovieVM.ProducerId)"></ValidationMessage>
+                            </div>
+                            }
+                            @if (Actors != null)
+                            {
+                                <div class="form-group">
+                                    <label for="ActorIds" class="form-label mt-4">Actors</label>
+                                    <InputSelect @bind-Value="newMovieVM.ActorIds" class="form-select">
+                                        @foreach (Actor actr in Actors)
+                                        {
+                                        <option value="@actr.Id">@actr.FullName</option>
+                                        }
+                                </InputSelect>
+                                <ValidationMessage For="@(()=>newMovieVM.ActorIds)" class="text-danger"></ValidationMessage>
+                            </div>
+                            }
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="Description" class="form-label mt-4">Description</label>
+                                <InputTextArea @bind-Value="newMovieVM.Description" class="form-control"></InputTextArea>
+                                <ValidationMessage For="@(()=>newMovieVM.Description)" class="text-danger"></ValidationMessage>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 offset-4 text-center">
+                        <img width="100%" id="ImageUrlPreview" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" href="Index">Show all</a>
+                    </div>
+
+                </EditForm>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

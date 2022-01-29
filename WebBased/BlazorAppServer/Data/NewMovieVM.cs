@@ -35,7 +35,7 @@ namespace BlazorAppServer.Data
         [Required(ErrorMessage = "Movie category is required")]
         [MinLength(1)]
         [MaxLength(10)]
-        public MovieCategory MovieCategory { get; set; }
+        public MovieCategory MovieCategory { get; set; } = MovieCategory.Action;
 
         //Relationships
         [Display(Name = "Select actor(s)")]

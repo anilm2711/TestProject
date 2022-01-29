@@ -1,11 +1,3 @@
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.csproj.AssemblyReference.cache
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.GeneratedMSBuildEditorConfig.editorconfig
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.AssemblyInfoInputs.cache
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.AssemblyInfo.cs
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.csproj.CoreCompileInputs.cache
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.MvcApplicationPartsAssemblyInfo.cache
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.RazorAssemblyInfo.cache
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.RazorAssemblyInfo.cs
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\AKM.Component.staticwebassets.runtime.json
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\appsettings.Development.json
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\appsettings.json
@@ -48,6 +40,14 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\AK
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\EBazarModels.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\AKM.Component.pdb
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\bin\Debug\net6.0\EBazarModels.pdb
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.csproj.AssemblyReference.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.GeneratedMSBuildEditorConfig.editorconfig
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.AssemblyInfoInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.AssemblyInfo.cs
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.csproj.CoreCompileInputs.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.MvcApplicationPartsAssemblyInfo.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.RazorAssemblyInfo.cache
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\BlazorAppServer.RazorAssemblyInfo.cs
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\staticwebassets.build.json
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\staticwebassets.development.json
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\BlazorAppServer\obj\Debug\net6.0\scopedcss\Shared\MainLayout.razor.rz.scp.css

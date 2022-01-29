@@ -9,7 +9,7 @@ namespace BlazorAppServer.Pages.Movies
     public class MovieCreateBase : ComponentBase
     {
         [Inject]
-        public IMovieService serviceMV { get; set; }
+        public IMovieCustomService serviceMV { get; set; }
 
         [Inject]
         public IActorService service { get; set; }
@@ -45,18 +45,7 @@ namespace BlazorAppServer.Pages.Movies
                 Cinemas = Cinemas
             };
 
-            newMovieVM = new NewMovieVM()
-            {
-                Name ="kdsfsdf",
-                Description = "kdsfsdf",
-                Price = 10.00,
-                ImageURL = "kdsfsdf",
-                CinemaId =1,
-                StartDate = DateTime.Now,
-                EndDate = DateTime.Now,
-                MovieCategory = EBazarModels.Data.Enum.MovieCategory.Horror,
-                ProducerId = 2
-            };
+           
 
         }
 
@@ -70,14 +59,27 @@ namespace BlazorAppServer.Pages.Movies
             //        newMovieVM.ActorIds.Add(actorid);
             //    }
             //}
+            MV = new NewMovieVM()
+            {
+                Id=-1,
+                Name = "NWWN",
+                Description = "MSMMSMS",
+                Price = 10.00,
+                ImageURL = "http://dotnethow.net/images/movies/movie-3.jpeg",
+                CinemaId = 1,
+                StartDate = DateTime.Now,
+                EndDate = DateTime.Now,
+                MovieCategory = EBazarModels.Data.Enum.MovieCategory.Horror,
+                ProducerId = 2
+            };
             HttpResponseMessage result;
 
-            //result = await serviceMV.AddAsync("api/Movies", MV);
+            result = await serviceMV.AddMovie("api/MoviesCustom", MV);
 
-            //if (result != null)
-            //{
-                navigationManager.NavigateTo("/actor", true);
-            //}
+            if (result != null)
+            {
+                navigationManager.NavigateTo("/", true);
+            }
         }
 
 

@@ -2,7 +2,7 @@
 @using EBazarModels.Data.Enum
 @inherits MovieCreateBase
 <EditForm Model="@MV" OnValidSubmit=@HandleValidSubmit>
-    <DataAnnotationsValidator></DataAnnotationsValidator>
+@*    <DataAnnotationsValidator></DataAnnotationsValidator>*@
     <fieldset>
         <table class="table" style="width:100%">
             <tr>
@@ -10,7 +10,7 @@
                     <div align="left">
                         <div class="form-control">
                             <label for="ImageURL" class="form-label mt-4">ImageURL </label>
-                            <InputText class="form-control" placeholder="Pic url" @bind-Value="MV.ImageURL" />
+                            <InputText class="form-control"  @bind-Value="MV.ImageURL" />
                             <ValidationMessage For="@(()=>MV.ImageURL)"></ValidationMessage>
                         </div>
                         <div class="form-control">
@@ -20,10 +20,10 @@
                         </div>
                         <div class="form-control">
                             <label for="Description" class="form-label mt-4">Description</label>
-                            <InputText class="form-control" placeholder="About" @bind-Value="MV.Description" rows="3" />
+                            <InputText class="form-control" @bind-Value="MV.Description" rows="3" />
                             <ValidationMessage For="@(()=>MV.Description)"></ValidationMessage>
                         </div>
-                        <div class="form-control">
+                        @*<div class="form-control">
                             <label for="Bio" class="form-label mt-4">MovieCategory</label>
                             <InputSelect @bind-Value="MV.MovieCategory">
                                 @foreach (var gender in Enum.GetValues(typeof(MovieCategory)))
@@ -31,7 +31,7 @@
                                     <option value="@gender">@gender</option>
                                 }
                             </InputSelect>
-                        </div>
+                        </div>*@
                         <div class="form-control">
                             <label for="CinemaId" class="form-label mt-4">CinemaId</label>
                             <InputNumber class="form-control" placeholder="CinemaId" @bind-Value="MV.CinemaId" rows="3" />
@@ -39,17 +39,17 @@
                         </div>
                         <div class="form-control">
                             <label for="ProducerId" class="form-label mt-4">ProducerId</label>
-                            <InputNumber class="form-control" placeholder="MovieCategory" @bind-Value="MV.ProducerId" rows="3" />
+                            <InputNumber class="form-control" @bind-Value="MV.ProducerId" rows="3" />
                             <ValidationMessage For="@(()=>MV.ProducerId)"></ValidationMessage>
                         </div>
                         <div class="form-control">
                             <label for="StartDate" class="form-label mt-4">StartDate</label>
-                            <InputDate class="form-control" placeholder="MovieCategory" @bind-Value="MV.StartDate" rows="3" />
+                            <InputDate class="form-control" @bind-Value="MV.StartDate" rows="3" />
                             <ValidationMessage For="@(()=>MV.StartDate)"></ValidationMessage>
                         </div>
                         <div class="form-control">
                             <label for="EndDate" class="form-label mt-4">EndDate</label>
-                            <InputDate class="form-control" placeholder="MovieCategory" @bind-Value="MV.EndDate" rows="3" />
+                            <InputDate class="form-control" @bind-Value="MV.EndDate" rows="3" />
                             <ValidationMessage For="@(()=>MV.EndDate)"></ValidationMessage>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
         </table>
         <hr />
         <div align="right">
-            <a class="btn btn-dark" href="/actor">Back</a>
+            <a class="btn btn-dark" href="/">Back</a>
             <button class="btn btn-primary" type="submit">Submit</button>
         </div>
 

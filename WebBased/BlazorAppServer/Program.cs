@@ -1,4 +1,5 @@
 
+using BlazorAppServer.Data;
 using BlazorAppServer.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
@@ -16,7 +17,7 @@ builder.Services.AddHttpClient<IOrderService, OrderService>(client => client.Bas
 builder.Services.AddHttpClient<ICinemaService, CinemaService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
 builder.Services.AddHttpClient<ICinemaService, CinemaService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
 builder.Services.AddHttpClient<IFileUploadService,FileUploadService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
-
+builder.Services.AddHttpClient<IMovieCustomService, MovieCustomService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
 
 
 

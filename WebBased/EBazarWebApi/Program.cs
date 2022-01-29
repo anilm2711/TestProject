@@ -18,11 +18,11 @@ builder.Services.AddCors(options =>
     .AllowAnyMethod()
     .AllowAnyHeader());
 });
-builder.Services.AddScoped<IActorsService, ActorsService>();
-builder.Services.AddScoped<IProducersService, ProducersService>();
-builder.Services.AddScoped<ICinemasService,CinemasService>();
-builder.Services.AddScoped<IMoviesService,MoviesService>();
-builder.Services.AddScoped<IOrdersService, OrdersService>();
+//builder.Services.AddScoped<IActorsService, ActorsService>();
+//builder.Services.AddScoped<IProducersService, ProducersService>();
+//builder.Services.AddScoped<ICinemasService,CinemasService>();
+//builder.Services.AddScoped<IMoviesService,MoviesService>();
+//builder.Services.AddScoped<IOrdersService, OrdersService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,6 +36,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseRouting();
 
 //Cross-Origin Resource Sharing (CORS) - HTTP - MDN Web ...
 app.UseCors("CorsPolicy");

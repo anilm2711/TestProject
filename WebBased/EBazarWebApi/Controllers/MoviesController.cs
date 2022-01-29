@@ -55,6 +55,22 @@ namespace EBazarWebApi.Controllers
             return json;
         }
 
+        [Route("GetSingleMovieById/{id}/")]
+        [HttpGet]
+        public async Task<ActionResult<string>> GetSingleMovieById(int id)
+        {
+            var movieDetails = await _context.Movies.FirstOrDefaultAsync(n => n.Id == id);
+
+            string json = JsonConvert.SerializeObject(movieDetails, Formatting.Indented, new JsonSerializerSettings
+            { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+
+            if (movieDetails == null)
+            {
+                return NotFound();
+            }
+
+            return json;
+        }
         // PUT: api/Movies/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -96,8 +112,10 @@ namespace EBazarWebApi.Controllers
 
             return CreatedAtAction("GetMovie", new { id = movie.Id }, movie);
         }
+
+        [Route("PostMovieVM/{id}/")]
         [HttpPost]
-        public async Task<ActionResult<Movie>> PostMovie(NewMovieVM data)
+        public async Task<ActionResult<Movie>> PostMovieVM(int id,NewMovieVM data)
         {
             var newMovie = new Movie()
             {

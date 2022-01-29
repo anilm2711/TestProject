@@ -1,7 +1,7 @@
 ﻿using EBazarModels.Data.Enum;
 using System.ComponentModel.DataAnnotations;
 
-namespace BlazorAppServer.Services
+namespace BlazorAppServer.Data
 {
     public class NewMovieVM
     {

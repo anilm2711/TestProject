@@ -1,6 +1,6 @@
 ﻿using EBazarModels.Models;
 
-namespace BlazorAppServer.Services
+namespace BlazorAppServer.Data
 {
     public class NewMovieDropdownsVM
     {

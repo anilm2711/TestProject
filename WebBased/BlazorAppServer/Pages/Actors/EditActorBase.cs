@@ -20,15 +20,7 @@ namespace BlazorAppServer.Pages
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
-        ElementReference inputReference;
-        string message = string.Empty;
-        string imagePath = null;
 
-        string fileName = string.Empty;
-        string type = string.Empty;
-        string size = string.Empty;
-
-        Stream fileStream = null;
 
         protected override async Task OnInitializedAsync()
         {

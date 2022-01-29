@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using EBazarModels.Models;
 using EBazarWebApi.Data;
 using Newtonsoft.Json;
+using EBazarWebApi.Data.ViewModels;
 
 namespace EBazarWebApi.Controllers
 {
@@ -94,6 +95,38 @@ namespace EBazarWebApi.Controllers
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetMovie", new { id = movie.Id }, movie);
+        }
+        [HttpPost]
+        public async Task<ActionResult<Movie>> PostMovie(NewMovieVM data)
+        {
+            var newMovie = new Movie()
+            {
+                Name = data.Name,
+                Description = data.Description,
+                Price = data.Price,
+                ImageURL = data.ImageURL,
+                CinemaId = data.CinemaId,
+                StartDate = data.StartDate,
+                EndDate = data.EndDate,
+                MovieCategory = data.MovieCategory,
+                ProducerId = data.ProducerId
+            };
+            await _context.Movies.AddAsync(newMovie);
+            await _context.SaveChangesAsync();
+
+            //Add Movie Actors
+            foreach (var actorId in data.ActorIds)
+            {
+                var newActorMovie = new Actor_Movie()
+                {
+                    MovieId = newMovie.Id,
+                    ActorId = actorId
+                };
+                await _context.Actors_Movies.AddAsync(newActorMovie);
+            }
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetMovie", new { id = newMovie.Id }, newMovie);
         }
 
         // DELETE: api/Movies/5

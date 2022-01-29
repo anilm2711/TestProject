@@ -59,19 +59,19 @@ namespace BlazorAppServer.Pages.Movies
             //        newMovieVM.ActorIds.Add(actorid);
             //    }
             //}
-            MV = new NewMovieVM()
-            {
-                Id=-1,
-                Name = "NWWN",
-                Description = "MSMMSMS",
-                Price = 10.00,
-                ImageURL = "http://dotnethow.net/images/movies/movie-3.jpeg",
-                CinemaId = 1,
-                StartDate = DateTime.Now,
-                EndDate = DateTime.Now,
-                MovieCategory = EBazarModels.Data.Enum.MovieCategory.Horror,
-                ProducerId = 2
-            };
+            //MV = new NewMovieVM()
+            //{
+            //    Id=-1,
+            //    Name = "NWWN",
+            //    Description = "MSMMSMS",
+            //    Price = 10.00,
+            //    ImageURL = "http://dotnethow.net/images/movies/movie-3.jpeg",
+            //    CinemaId = 1,
+            //    StartDate = DateTime.Now,
+            //    EndDate = DateTime.Now,
+            //    MovieCategory = EBazarModels.Data.Enum.MovieCategory.Horror,
+            //    ProducerId = 2
+            //};
             HttpResponseMessage result;
 
             result = await serviceMV.AddMovie("api/MoviesCustom", MV);

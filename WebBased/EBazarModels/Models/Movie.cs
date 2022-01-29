@@ -19,16 +19,16 @@ namespace EBazarModels.Models
         public MovieCategory MovieCategory { get; set; }
 
         //Relationships
-        public List<Actor_Movie> Actors_Movies { get; set; } = new List<Actor_Movie>();
+        public List<Actor_Movie> Actors_Movies { get; set; } 
 
         //Cinema
         public int CinemaId { get; set; }
         [ForeignKey("CinemaId")]
-        public Cinema Cinema { get; set; } = new Cinema();
+        public Cinema Cinema { get; set; }
 
         //Producer
         public int ProducerId { get; set; }
         [ForeignKey("ProducerId")]
-        public Producer Producer { get; set; } = new Producer();
+        public Producer Producer { get; set; } 
     }
 }

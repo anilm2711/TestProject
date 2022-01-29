@@ -51,7 +51,7 @@ namespace EBazarWebApi.Controllers
         {
             var newMovie = new Movie()
             {
-                Id = -999,   
+ 
                 Name = data.Name,
                 Description = data.Description,
                 Price = data.Price,

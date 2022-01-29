@@ -34,13 +34,28 @@
                         </div>*@
                         <div class="form-control">
                             <label for="CinemaId" class="form-label mt-4">CinemaId</label>
-                            <InputNumber class="form-control" placeholder="CinemaId" @bind-Value="MV.CinemaId" rows="3" />
+                            <InputNumber class="form-control"  @bind-Value="MV.CinemaId" rows="3">
+                                @foreach (var cin in Cinemas)
+                                {
+                                    <option value="@cin.Id">@cin.Name</option>
+                                }
+                            </InputNumber>
                             <ValidationMessage For="@(()=>MV.CinemaId)"></ValidationMessage>
                         </div>
                         <div class="form-control">
                             <label for="ProducerId" class="form-label mt-4">ProducerId</label>
                             <InputNumber class="form-control" @bind-Value="MV.ProducerId" rows="3" />
                             <ValidationMessage For="@(()=>MV.ProducerId)"></ValidationMessage>
+                        </div>
+                        <div class="form-control">
+                            <label for="CinemaId" class="form-label mt-4">CinemaId</label>
+                            <select class="form-control"  multiple="MV.ActorIds" rows="3">
+                                @foreach (var cin in Actors)
+                                {
+                                    <option value="@cin.Id">@cin.FullName</option>
+                                }
+                            </select>
+                            <ValidationMessage For="@(()=>MV.CinemaId)"></ValidationMessage>
                         </div>
                         <div class="form-control">
                             <label for="StartDate" class="form-label mt-4">StartDate</label>

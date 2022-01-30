@@ -65,11 +65,11 @@
                             <div class="col-md-12">
                                 <div class="card-footer ">
                                     <p class="card-text">
-                                        <a class="btn btn-outline-primary float-right" href="@($"moviedetails/{item.Id}")">
-                                            <i class="btn btn-dark"></i> Show Details
+                                        <a class="btn btn-dark float-left" href="@($"moviedetails/{item.Id}")">
+                                           Show Details
                                         </a>
-                                        <a class="btn btn-outline-primary float-right" href="@($"moviecreate/{item.Id}")">
-                                            <i class="btn btn-dark"></i> Update Movie
+                                        <a class="btn btn-dark float-right" href="@($"moviecreate/{item.Id}")">
+                                           Update Movie
                                         </a>
                                         <a class="btn btn-success text-white @((DateTime.Now > item.EndDate) ? "disabled" : "")"
                                    href="@($"orders/{item.Id}")">

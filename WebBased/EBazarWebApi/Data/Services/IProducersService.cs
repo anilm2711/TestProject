@@ -3,7 +3,7 @@ using EBazarWebApi.Data.Base;
 
 namespace EBazarWebApi.Data.Services
 {
-    public interface IProducersService:IEntityBaseRepository<Producer>
+    public interface IProducersService : IEntityBaseRepository<Producer>
     {
     }
 }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EBazarWebApi.Data.ViewComponents
 {
-    public class ShoppingCartSummary:ViewComponent
+    public class ShoppingCartSummary : ViewComponent
     {
         private readonly ShoppingCart _shoppingCart;
         public ShoppingCartSummary(ShoppingCart shoppingCart)

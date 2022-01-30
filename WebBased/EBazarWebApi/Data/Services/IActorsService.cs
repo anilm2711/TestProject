@@ -3,8 +3,8 @@ using EBazarWebApi.Data.Base;
 
 namespace EBazarWebApi.Data.Services
 {
-    public interface IActorsService:IEntityBaseRepository<Actor>
+    public interface IActorsService : IEntityBaseRepository<Actor>
     {
-       
+
     }
 }

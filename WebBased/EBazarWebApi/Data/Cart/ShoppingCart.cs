@@ -30,7 +30,7 @@ namespace EBazarWebApi.Data.Cart
         {
             var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Movie.Id == movie.Id && n.ShoppingCartId == ShoppingCartId);
 
-            if(shoppingCartItem == null)
+            if (shoppingCartItem == null)
             {
                 shoppingCartItem = new ShoppingCartItem()
                 {
@@ -40,7 +40,8 @@ namespace EBazarWebApi.Data.Cart
                 };
 
                 _context.ShoppingCartItems.Add(shoppingCartItem);
-            } else
+            }
+            else
             {
                 shoppingCartItem.Amount++;
             }
@@ -53,10 +54,11 @@ namespace EBazarWebApi.Data.Cart
 
             if (shoppingCartItem != null)
             {
-                if(shoppingCartItem.Amount > 1)
+                if (shoppingCartItem.Amount > 1)
                 {
                     shoppingCartItem.Amount--;
-                } else
+                }
+                else
                 {
                     _context.ShoppingCartItems.Remove(shoppingCartItem);
                 }
@@ -69,7 +71,7 @@ namespace EBazarWebApi.Data.Cart
             return ShoppingCartItems ?? (ShoppingCartItems = _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Include(n => n.Movie).ToList());
         }
 
-        public double GetShoppingCartTotal() =>  _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Select(n => n.Movie.Price * n.Amount).Sum();
+        public double GetShoppingCartTotal() => _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Select(n => n.Movie.Price * n.Amount).Sum();
 
         public async Task ClearShoppingCartAsync()
         {

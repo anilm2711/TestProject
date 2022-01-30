@@ -1,15 +1,10 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using EBazarModels.Models;
 using EBazarWebApi.Data;
-using Newtonsoft.Json;
 using EBazarWebApi.Data.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace EBazarWebApi.Controllers
 {
@@ -51,7 +46,7 @@ namespace EBazarWebApi.Controllers
         {
             var newMovie = new Movie()
             {
- 
+
                 Name = data.Name,
                 Description = data.Description,
                 Price = data.Price,
@@ -62,11 +57,11 @@ namespace EBazarWebApi.Controllers
                 MovieCategory = data.MovieCategory,
                 ProducerId = data.ProducerId
             };
-           
+
             try
             {
                 _context.Movies.Add(newMovie);
-                 _context.SaveChanges();
+                _context.SaveChanges();
                 //await _context.Movies.AddAsync(newMovie);
                 //await _context.SaveChangesAsync();
             }
@@ -78,7 +73,7 @@ namespace EBazarWebApi.Controllers
 
 
             //Add Movie Actors
-            
+
             try
             {
                 foreach (var actorId in data.ActorIds)
@@ -88,12 +83,12 @@ namespace EBazarWebApi.Controllers
                         MovieId = newMovie.Id,
                         ActorId = actorId
                     };
-                     _context.Actors_Movies.Add(newActorMovie);
+                    _context.Actors_Movies.Add(newActorMovie);
                     _context.SaveChangesAsync();
                 }
-                
+
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 throw ex;
@@ -103,6 +98,6 @@ namespace EBazarWebApi.Controllers
 
 
         }
- 
+
     }
 }

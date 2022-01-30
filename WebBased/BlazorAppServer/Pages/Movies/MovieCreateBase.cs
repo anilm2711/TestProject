@@ -51,27 +51,15 @@ namespace BlazorAppServer.Pages.Movies
 
         protected async Task HandleValidSubmit()
         {
-            //foreach (string pid in ActorIds)
-            //{
-            //    bool isNumber = int.TryParse(pid, out int actorid);
-            //    if (isNumber)
-            //    {
-            //        newMovieVM.ActorIds.Add(actorid);
-            //    }
-            //}
-            //MV = new NewMovieVM()
-            //{
-            //    Id=-1,
-            //    Name = "NWWN",
-            //    Description = "MSMMSMS",
-            //    Price = 10.00,
-            //    ImageURL = "http://dotnethow.net/images/movies/movie-3.jpeg",
-            //    CinemaId = 1,
-            //    StartDate = DateTime.Now,
-            //    EndDate = DateTime.Now,
-            //    MovieCategory = EBazarModels.Data.Enum.MovieCategory.Horror,
-            //    ProducerId = 2
-            //};
+            foreach (string pid in ActorIds)
+            {
+                bool isNumber = int.TryParse(pid, out int actorid);
+                if (isNumber)
+                {
+                    newMovieVM.ActorIds.Add(actorid);
+                }
+            }
+
             HttpResponseMessage result;
 
             result = await serviceMV.AddMovie("api/MoviesCustom", MV);
@@ -82,11 +70,9 @@ namespace BlazorAppServer.Pages.Movies
             }
         }
 
-
-        protected void  OnActorSelectDropDownChange(ChangeEventArgs e)
+        protected void ActorSelect_OnClicK(ChangeEventArgs e)
         {
             ActorIds = (IEnumerable<string>)e.Value;
-            
         }
     }
 }

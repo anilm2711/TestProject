@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace EBazarWebApi.Controllers
 {
@@ -23,7 +22,7 @@ namespace EBazarWebApi.Controllers
             string fileName = image.FileName;
             string extension = Path.GetExtension(fileName);
 
-            string[] allowedExtensions = { ".jpg", ".png", ".bmp" ,".jpeg"};
+            string[] allowedExtensions = { ".jpg", ".png", ".bmp", ".jpeg" };
 
             if (!allowedExtensions.Contains(extension))
                 return BadRequest("File is not a valid image");

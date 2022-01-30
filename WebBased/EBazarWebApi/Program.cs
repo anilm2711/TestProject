@@ -1,5 +1,4 @@
 using EBazarWebApi.Data;
-using EBazarWebApi.Data.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,7 +42,7 @@ app.UseRouting();
 app.UseCors("CorsPolicy");
 
 //for image display
-app.UseStaticFiles(); 
+app.UseStaticFiles();
 //Seed database
 AppDbInitializer.Seed(app);
 //AppDbInitializer.SeedUsersAndRolesAsync(app).Wait();

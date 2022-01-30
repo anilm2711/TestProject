@@ -1,13 +1,8 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using EBazarModels.Models;
 using EBazarWebApi.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 
 namespace EBazarWebApi.Controllers
@@ -25,7 +20,7 @@ namespace EBazarWebApi.Controllers
         [HttpGet]
         public string GetActors()
         {
-            List<Actor> movie = _context.Actors.Take(50).Include(e=>e.Actors_Movies).ToList();
+            List<Actor> movie = _context.Actors.Take(50).Include(e => e.Actors_Movies).ToList();
             string json = JsonConvert.SerializeObject(movie, Formatting.Indented, new JsonSerializerSettings
             { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
             return json;

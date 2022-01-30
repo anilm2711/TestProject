@@ -1,86 +1,94 @@
 ﻿@page "/moviecreate"
 @using EBazarModels.Data.Enum
 @inherits MovieCreateBase
-<EditForm Model="@MV" OnValidSubmit=@HandleValidSubmit>
-@*    <DataAnnotationsValidator></DataAnnotationsValidator>*@
-    <fieldset>
-        <table class="table" style="width:100%">
-            <tr>
-                <td >
-                    <div align="left">
-                        <div class="form-control">
-                            <label for="ImageURL" class="form-label mt-4">ImageURL </label>
-                            <InputText class="form-control"  @bind-Value="MV.ImageURL" />
-                            <ValidationMessage For="@(()=>MV.ImageURL)"></ValidationMessage>
-                        </div>
-                        <div class="form-control">
-                            <label for="Name" class="form-label mt-4">Name</label>
-                            <InputText class="form-control" placeholder="Full Name" @bind-Value="MV.Name" />
-                            <ValidationMessage For="@(()=>MV.Name)"></ValidationMessage>
-                        </div>
-                        <div class="form-control">
-                            <label for="Description" class="form-label mt-4">Description</label>
-                            <InputText class="form-control" @bind-Value="MV.Description" rows="3" />
-                            <ValidationMessage For="@(()=>MV.Description)"></ValidationMessage>
-                        </div>
-                        @*<div class="form-control">
-                            <label for="Bio" class="form-label mt-4">MovieCategory</label>
-                            <InputSelect @bind-Value="MV.MovieCategory">
-                                @foreach (var gender in Enum.GetValues(typeof(MovieCategory)))
-                                {
+
+@if (Cinemas == null || Producers == null || Actors == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <EditForm Model="@MV" OnValidSubmit=@HandleValidSubmit>
+        @*    <DataAnnotationsValidator></DataAnnotationsValidator>*@
+        <fieldset>
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <div align="left">
+                            <div class="form-group">
+                                <label for="ImageURL" class="form-label mt-4">ImageURL </label>
+                                <InputText class="form-control" @bind-Value="MV.ImageURL" />
+                                <ValidationMessage For="@(()=>MV.ImageURL)"></ValidationMessage>
+                            </div>
+                            <div class="form-group">
+                                <label for="Name" class="form-label mt-4">Name</label>
+                                <InputText class="form-control" placeholder="Full Name" @bind-Value="MV.Name" />
+                                <ValidationMessage For="@(()=>MV.Name)"></ValidationMessage>
+                            </div>
+                            <div class="form-group">
+                                <label for="Description" class="form-label mt-4">Description</label>
+                                <InputText class="form-control" @bind-Value="MV.Description" rows="3" />
+                                <ValidationMessage For="@(()=>MV.Description)"></ValidationMessage>
+                            </div>
+                            <div class="form-group">
+                                <label for="Bio" class="form-label mt-4">MovieCategory</label>
+                                <InputSelect @bind-Value="MV.MovieCategory">
+                                    @foreach (var gender in Enum.GetValues(typeof(MovieCategory)))
+                                    {
                                     <option value="@gender">@gender</option>
-                                }
+                                    }
                             </InputSelect>
-                        </div>*@
-                        <div class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label for="CinemaId" class="form-label mt-4">CinemaId</label>
-                            <InputNumber class="form-control"  @bind-Value="MV.CinemaId" rows="3">
+                            <InputSelect class="form-control" @bind-Value="MV.CinemaId" rows="3">
                                 @foreach (var cin in Cinemas)
-                                {
+                                    {
                                     <option value="@cin.Id">@cin.Name</option>
-                                }
-                            </InputNumber>
+                                    }
+                            </InputSelect>
                             <ValidationMessage For="@(()=>MV.CinemaId)"></ValidationMessage>
                         </div>
-                        <div class="form-control">
+                        <div class="form-group">
                             <label for="ProducerId" class="form-label mt-4">ProducerId</label>
-                            <InputNumber class="form-control" @bind-Value="MV.ProducerId" rows="3">
-                                  @foreach (var cin in Producers)
-                                {
+                            <InputSelect class="form-control" @bind-Value="MV.ProducerId" rows="3">
+                                @foreach (var cin in Producers)
+                                    {
                                     <option value="@cin.Id">@cin.FullName</option>
-                                }
-                            </InputNumber>
+                                    }
+                            </InputSelect>
                             <ValidationMessage For="@(()=>MV.ProducerId)"></ValidationMessage>
                         </div>
-                        <div class="form-control">
-                            <label for="CinemaId" class="form-label mt-4">CinemaId</label>
-                            <select class="form-control"  multiple="MV.ActorIds" rows="3" @onchange="ActorSelect_OnClicK">
+                        <div class="form-group">
+                            <label class="form-label mt-4">Actors</label>
+                            <select class="form-control" multiple="MV.ActorIds" rows="3" @onchange="ActorSelect_OnClicK">
                                 @foreach (var cin in Actors)
-                                {
-                                    <option value="@cin.Id">@cin.FullName</option>
-                                }
-                            </select>
-                            <ValidationMessage For="@(()=>MV.CinemaId)"></ValidationMessage>
-                        </div>
-                        <div class="form-control">
-                            <label for="StartDate" class="form-label mt-4">StartDate</label>
-                            <InputDate class="form-control" @bind-Value="MV.StartDate" rows="3" />
-                            <ValidationMessage For="@(()=>MV.StartDate)"></ValidationMessage>
-                        </div>
-                        <div class="form-control">
-                            <label for="EndDate" class="form-label mt-4">EndDate</label>
-                            <InputDate class="form-control" @bind-Value="MV.EndDate" rows="3" />
-                            <ValidationMessage For="@(()=>MV.EndDate)"></ValidationMessage>
+                                    {
+                                        <option value="@cin.Id">@cin.FullName</option>
+                                    }
+                                </select>
+                                <ValidationMessage For="@(()=>MV.CinemaId)"></ValidationMessage>
+                            </div>
+                            <div class="form-group">
+                                <label for="StartDate" class="form-label mt-4">StartDate</label>
+                                <InputDate class="form-control" @bind-Value="MV.StartDate" rows="3" />
+                                <ValidationMessage For="@(()=>MV.StartDate)"></ValidationMessage>
+                            </div>
+                            <div class="form-group">
+                                <label for="EndDate" class="form-label mt-4">EndDate</label>
+                                <InputDate class="form-control" @bind-Value="MV.EndDate" rows="3" />
+                                <ValidationMessage For="@(()=>MV.EndDate)"></ValidationMessage>
+                            </div>
                         </div>
                     </div>
-                </td>
-            </tr>
-        </table>
-        <hr />
-        <div align="right">
-            <a class="btn btn-dark" href="/">Back</a>
-            <button class="btn btn-primary" type="submit">Submit</button>
-        </div>
+                </div>
+            </div>
+            <hr />
+            <div align="right">
+                <a class="btn btn-dark" href="/">Back</a>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
 
-    </fieldset>
-</EditForm>
+        </fieldset>
+    </EditForm>
+}

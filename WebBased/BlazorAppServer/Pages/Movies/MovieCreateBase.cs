@@ -44,9 +44,6 @@ namespace BlazorAppServer.Pages.Movies
                 Producers = Producers,
                 Cinemas = Cinemas
             };
-
-           
-
         }
 
         protected async Task HandleValidSubmit()

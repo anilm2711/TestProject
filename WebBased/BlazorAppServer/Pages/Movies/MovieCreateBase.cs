@@ -8,8 +8,13 @@ namespace BlazorAppServer.Pages.Movies
 {
     public class MovieCreateBase : ComponentBase
     {
+        [Parameter]
+        public string Id { get; set; }
         [Inject]
-        public IMovieCustomService serviceMV { get; set; }
+        public IMovieCustomService serviceCustomMV { get; set; }
+
+        [Inject]
+        public IMovieService serviceMV { get; set; }
 
         [Inject]
         public IActorService service { get; set; }
@@ -32,6 +37,8 @@ namespace BlazorAppServer.Pages.Movies
 
         IEnumerable<string> ActorIds { get; set; }
 
+        public Movie data { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
             Task<string> json = service.GetResultSerialize("api/Actors");
@@ -44,6 +51,32 @@ namespace BlazorAppServer.Pages.Movies
                 Producers = Producers,
                 Cinemas = Cinemas
             };
+            bool x= int.TryParse(Id, out int mvId);
+            if (mvId > 0)
+            {
+                try
+                {
+                    Id = Id ?? "1";
+                    Task<string> movieSrz = service.GetResultSerialize($"api/Movies/{Id}");
+                    data = JsonConvert.DeserializeObject<Movie>(movieSrz.Result, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+
+                    MV.Id = mvId;
+                    MV.Price = data.Price;
+                    MV.ImageURL = data.ImageURL;
+                    MV.Name = data.Name;
+                    MV.CinemaId = data.CinemaId;
+                    MV.StartDate = data.StartDate;
+                    MV.EndDate = data.EndDate;
+                    MV.MovieCategory = data.MovieCategory;
+                    MV.ProducerId = data.ProducerId;
+                    MV.Description = data.Description;
+                    MV.ActorIds = data.Actors_Movies.Select(p => p.ActorId).ToList();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+            }
         }
 
         protected async Task HandleValidSubmit()
@@ -53,13 +86,13 @@ namespace BlazorAppServer.Pages.Movies
                 bool isNumber = int.TryParse(pid, out int actorid);
                 if (isNumber)
                 {
-                    newMovieVM.ActorIds.Add(actorid);
+                    MV.ActorIds.Add(actorid);
                 }
             }
 
             HttpResponseMessage result;
 
-            result = await serviceMV.AddMovie("api/MoviesCustom", MV);
+            result = await serviceCustomMV.AddMovie("api/MoviesCustom", MV);
 
             if (result != null)
             {

@@ -1,4 +1,6 @@
 ﻿@page "/moviecreate"
+@page "/moviecreate/{id}"
+
 @using EBazarModels.Data.Enum
 @inherits MovieCreateBase
 
@@ -61,13 +63,13 @@ else
                         </div>
                         <div class="form-group">
                             <label class="form-label mt-4">Actors</label>
-                            <select class="form-control" multiple="MV.ActorIds" rows="3" @onchange="ActorSelect_OnClicK">
+                            <select class="form-control" multiple="MV.ActorIds"  @rows="3" @onchange="ActorSelect_OnClicK">
                                 @foreach (var cin in Actors)
                                     {
                                         <option value="@cin.Id">@cin.FullName</option>
                                     }
                                 </select>
-                                <ValidationMessage For="@(()=>MV.CinemaId)"></ValidationMessage>
+                                <ValidationMessage For="@(()=>MV.ActorIds)"></ValidationMessage>
                             </div>
                             <div class="form-group">
                                 <label for="StartDate" class="form-label mt-4">StartDate</label>

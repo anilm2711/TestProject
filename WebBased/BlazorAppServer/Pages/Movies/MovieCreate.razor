@@ -63,7 +63,7 @@ else
                         </div>
                         <div class="form-group">
                             <label class="form-label mt-4">Actors</label>
-                            <select class="form-control" multiple="MV.ActorIds"  @rows="3" @onchange="ActorSelect_OnClicK">
+                            <select class="form-control" multiple="MV.ActorIds" @onchange="ActorSelect_OnClicK">
                                 @foreach (var cin in Actors)
                                     {
                                         <option value="@cin.Id">@cin.FullName</option>
@@ -81,6 +81,7 @@ else
                                 <InputDate class="form-control" @bind-Value="MV.EndDate" rows="3" />
                                 <ValidationMessage For="@(()=>MV.EndDate)"></ValidationMessage>
                             </div>
+                            
                         </div>
                     </div>
                 </div>

@@ -35,7 +35,7 @@ namespace BlazorAppServer.Pages.Movies
         [Inject]
         public NavigationManager navigationManager { get; set; }
 
-        IEnumerable<string> ActorIds { get; set; }
+        IEnumerable<int> ActorIds { get; set; }
 
         public Movie data { get; set; }
 
@@ -81,13 +81,9 @@ namespace BlazorAppServer.Pages.Movies
 
         protected async Task HandleValidSubmit()
         {
-            foreach (string pid in ActorIds)
+            foreach (int pid in ActorIds)
             {
-                bool isNumber = int.TryParse(pid, out int actorid);
-                if (isNumber)
-                {
-                    MV.ActorIds.Add(actorid);
-                }
+                MV.ActorIds.Add(pid);
             }
 
             HttpResponseMessage result;
@@ -102,7 +98,7 @@ namespace BlazorAppServer.Pages.Movies
 
         protected void ActorSelect_OnClicK(ChangeEventArgs e)
         {
-            ActorIds = (IEnumerable<string>)e.Value;
+            ActorIds = (IEnumerable<int>)e.Value;
         }
     }
 }

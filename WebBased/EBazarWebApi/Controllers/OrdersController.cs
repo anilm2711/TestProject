@@ -24,6 +24,7 @@ namespace EBazarWebApi.Controllers
             return await _context.Orders.ToListAsync();
         }
 
+       
         // GET: api/Orders/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Order>> GetOrder(int id)

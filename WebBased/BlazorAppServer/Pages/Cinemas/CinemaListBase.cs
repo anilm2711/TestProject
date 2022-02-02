@@ -7,12 +7,12 @@ namespace BlazorAppServer.Pages
     public class CinemaListBase : ComponentBase
     {
         [Inject]
-        public ICinemaService service { get; set; }
+        public ICinemasService service { get; set; }
         public IEnumerable<Cinema> Cinemas { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            Cinemas = (await service.GetResult("api/Cinemas")).ToList();
+            Cinemas = (await service.GetAllAsync()).ToList();
         }
     }
 }

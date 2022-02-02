@@ -14,7 +14,7 @@ namespace BlazorAppServer.Pages
         public bool ShowFooter { get; set; } = true;
 
         [Inject]
-        public IMovieService service { get; set; }
+        public IMoviesService service { get; set; }
         public Movie result { get; set; }
 
         public string movieavailability { get; set; }
@@ -26,9 +26,8 @@ namespace BlazorAppServer.Pages
         {
             try
             {
-                Id = Id ?? "1";
-                Task<string> movieSrz = service.GetResultSerialize($"api/Movies/{Id}");
-                result = JsonConvert.DeserializeObject<Movie>(movieSrz.Result, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+                result =await  service.GetMovieByIdAsync(Convert.ToInt32(Id));
+                
             }
             catch(Exception ex)
             {

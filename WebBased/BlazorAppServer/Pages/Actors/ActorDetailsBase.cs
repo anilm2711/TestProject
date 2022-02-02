@@ -9,7 +9,7 @@ namespace BlazorAppServer.Pages
         [Parameter]
         public string Id { get; set; }
         [Inject]
-        public IActorService service { get; set; }
+        public IActorsService service { get; set; }
         public Actor result { get; set; } 
 
         protected string ButtonText { get; set; } = "Hide Footer";
@@ -20,7 +20,7 @@ namespace BlazorAppServer.Pages
         protected override async Task OnInitializedAsync()
         {
             Id = Id ?? "1";
-            result = (await service.GetResultByIdAsync($"api/Actors/{Id}"));
+            result = (await service.GetByIdAsync(Convert.ToInt32(Id)));
         }
 
         protected void Button_Click()
@@ -39,7 +39,7 @@ namespace BlazorAppServer.Pages
         protected async Task DeleteActor()
         {
             //string Id = Convert.ToString(Id);
-            var result = service.DeleteAsync($"api/Actors/{Id}");
+            var result = service.DeleteAsync(Convert.ToInt32(Id));
             if (result != null)
             {
                 NavigationManager.NavigateTo("/actor", true);

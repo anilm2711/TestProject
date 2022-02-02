@@ -3,8 +3,7 @@ using EBazarModels.Models;
 
 namespace BlazorAppServer.Services
 {
-    public interface IMovieService : IEntityBaseRepository<Movie>
+    public interface ICinemasService:IEntityBaseRepository<Cinema>
     {
-       
     }
 }

@@ -9,7 +9,7 @@ namespace BlazorAppServer.Pages
     public class DisplayActorBase:ComponentBase
     {
         [Inject]
-        public IActorService service { get; set; }
+        public IActorsService service { get; set; }
         [Parameter]
         public Actor Actor { get; set; }
 
@@ -46,7 +46,7 @@ namespace BlazorAppServer.Pages
             if(isDeleteConfirmed)
             {
                 string Id = Convert.ToString(Actor.Id);
-                await service.DeleteAsync($"api/Actors/{Id}");
+                await service.DeleteAsync(Actor.Id);
                 await OnActorDeleted.InvokeAsync(Actor.Id);
             }
 

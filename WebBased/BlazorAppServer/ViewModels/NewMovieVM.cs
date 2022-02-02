@@ -1,7 +1,8 @@
 ﻿using EBazarModels.Data.Enum;
 using System.ComponentModel.DataAnnotations;
 
-namespace BlazorAppServer.Data
+
+namespace EBazarAppServer.ViewModels
 {
     public class NewMovieVM
     {
@@ -25,20 +26,20 @@ namespace BlazorAppServer.Data
 
         [Display(Name = "Movie start date")]
         [Required(ErrorMessage = "Start date is required")]
-        public DateTime StartDate { get; set; } = DateTime.Now;
+        public DateTime StartDate { get; set; }
 
         [Display(Name = "Movie end date")]
         [Required(ErrorMessage = "End date is required")]
-        public DateTime EndDate { get; set; } = DateTime.Now;
+        public DateTime EndDate { get; set; }
 
         [Display(Name = "Select a category")]
         [Required(ErrorMessage = "Movie category is required")]
-        public MovieCategory MovieCategory { get; set; } = MovieCategory.Action;
+        public MovieCategory MovieCategory { get; set; }
 
         //Relationships
         [Display(Name = "Select actor(s)")]
         [Required(ErrorMessage = "Movie actor(s) is required")]
-        public List<int> ActorIds { get; set; } = new List<int>();
+        public List<int> ActorIds { get; set; }
 
         [Display(Name = "Select a cinema")]
         [Required(ErrorMessage = "Movie cinema is required")]

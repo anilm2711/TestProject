@@ -9,7 +9,7 @@ namespace BlazorAppServer.Pages
         [Parameter]
         public string Id { get; set; }
         [Inject]
-        public ICinemaService service { get; set; }
+        public ICinemasService service { get; set; }
         public Cinema result { get; set; }
 
         protected string ButtonText { get; set; } = "Hide Footer";
@@ -18,7 +18,7 @@ namespace BlazorAppServer.Pages
         protected override async Task OnInitializedAsync()
         {
             Id = Id ?? "1";
-            result = (await service.GetResultByIdAsync($"api/Cinemas/{Id}"));
+            result = (await service.GetByIdAsync(Convert.ToInt32(Id)));
         }
 
         protected void Button_Click()

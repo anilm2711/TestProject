@@ -9,7 +9,7 @@ namespace BlazorAppServer.Pages
         [Parameter]
         public string Id { get; set; }
         [Inject]
-        public IProducerService producerService { get; set; }
+        public IProducersService producerService { get; set; }
         public Producer Producer { get; set; }
 
         protected string ButtonText { get; set; } = "Hide Footer";
@@ -18,7 +18,7 @@ namespace BlazorAppServer.Pages
         protected override async Task OnInitializedAsync()
         {
             Id = Id ?? "1";
-            Producer = (await producerService.GetResultByIdAsync($"api/Producers/{Id}"));
+            Producer = (await producerService.GetByIdAsync(Convert.ToInt32(Id)));
         }
 
         protected void Button_Click()

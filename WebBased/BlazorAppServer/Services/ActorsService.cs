@@ -1,16 +1,15 @@
 ﻿using BlazorAppServer.Base;
+using EBazarAppServer.Data;
 using EBazarModels.Models;
 using System.Linq.Expressions;
 
 namespace BlazorAppServer.Services
 {
-    public class ActorService :  EntityBaseRepository<Actor>, IActorService
+    public class ActorsService : EntityBaseRepository<Actor>, IActorsService
     {
         private readonly HttpClient _httpClient;
-        public ActorService(HttpClient httpClient):base(httpClient)
+        public ActorsService(AppDbContext context) : base(context)
         {
-  
         }
-
     }
 }

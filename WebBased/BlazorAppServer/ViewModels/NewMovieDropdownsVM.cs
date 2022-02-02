@@ -1,6 +1,6 @@
 ﻿using EBazarModels.Models;
 
-namespace BlazorAppServer.Data
+namespace EBazarAppServer.ViewModels
 {
     public class NewMovieDropdownsVM
     {
@@ -11,8 +11,8 @@ namespace BlazorAppServer.Data
             Actors = new List<Actor>();
         }
 
-        public IEnumerable<Producer> Producers { get; set; }
-        public IEnumerable<Cinema> Cinemas { get; set; }
-        public IEnumerable<Actor> Actors { get; set; }
+        public List<Producer> Producers { get; set; }
+        public List<Cinema> Cinemas { get; set; }
+        public List<Actor> Actors { get; set; }
     }
 }

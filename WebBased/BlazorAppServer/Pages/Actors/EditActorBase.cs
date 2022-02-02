@@ -8,7 +8,7 @@ namespace BlazorAppServer.Pages
     {
 
            [Inject]
-        public IActorService service { get; set; }
+        public IActorsService service { get; set; }
         public Actor Actor { get; set; } = new Actor();
 
         [Parameter]
@@ -27,7 +27,7 @@ namespace BlazorAppServer.Pages
             int.TryParse(Id, out int actorId);
             if (actorId != 0)
             {
-                Actor = await service.GetResultByIdAsync($"api/Actors/{Id}");
+                Actor = await service.GetByIdAsync(actorId);
                 picUrl = Actor.ProfilePictureURL;
             }
             else
@@ -41,19 +41,16 @@ namespace BlazorAppServer.Pages
         protected async Task HandleValidSubmit()
         {
             Actor.ProfilePictureURL = picUrl;
-            HttpResponseMessage result;
+
             if (Actor.Id > 0)
             {
-                result = await service.UpdateAsync($"api/Actors/{Id}", Actor);
+                service.UpdateAsync(Convert.ToInt32(Id), Actor);
             }
             else
             {
-                result = await service.AddAsync("api/Actors", Actor);
+                service.AddAsync(Actor);
             }
-            if (result != null)
-            {
-                NavigationManager.NavigateTo("/actor", true);
-            }
+            NavigationManager.NavigateTo("/actor", true);
         }
 
     }

@@ -1,60 +1,89 @@
-﻿using EBazarModels.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using EBazarAppServer.Data;
+using EBazarModels.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq.Expressions;
-using System.Text.Json;
 
 namespace BlazorAppServer.Base
 {
-    public class EntityBaseRepository<T> : IEntityBaseRepository<T> where T : class,IEntityBase, new()
+    public class EntityBaseRepository<T> : IEntityBaseRepository<T> where T : class, IEntityBase, new()
     {
-        private readonly HttpClient _context;
-        public EntityBaseRepository(HttpClient context)
+        private readonly AppDbContext _context;
+        public EntityBaseRepository(AppDbContext context)
         {
             _context = context;
         }
 
-        public async Task<HttpResponseMessage> AddAsync(string uri,T entity)
+        public async Task AddAsync(T entity)
         {
-            return await _context.PostAsJsonAsync<T>(uri, entity);
+            await _context.Set<T>().AddAsync(entity);
+            await _context.SaveChangesAsync();
         }
 
-        public async Task<HttpResponseMessage> DeleteAsync(string uri)
+        public async Task DeleteAsync(int id)
         {
-           return await _context.DeleteAsync(uri);
+            var entity = await _context.Set<T>().FirstOrDefaultAsync(n => n.Id == id);
+            EntityEntry entityEntry = _context.Entry<T>(entity);
+            entityEntry.State = EntityState.Deleted;
+
+            await _context.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties)
+        public async Task<IEnumerable<T>> GetAllAsync() => await _context.Set<T>().ToListAsync();
+
+        public async Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeProperties)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = _context.Set<T>();
+            query = includeProperties.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
+            return await query.ToListAsync();
+
         }
 
-        public Task<T> GetByIdAsync(int id, params Expression<Func<T, object>>[] includeProperties)
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Set<T>().FindAsync(id);
         }
 
-        public async Task<IEnumerable<T>> GetResult(string uri)
+        public async Task<T> GetByIdAsync(int id, params Expression<Func<T, object>>[] includeProperties)
         {
-            JsonSerializerOptions options= new JsonSerializerOptions(); 
-
-            Task<T[]?> c = _context.GetFromJsonAsync<T[]>(uri);
-            return await c;
+            IQueryable<T> query = _context.Set<T>();
+            query = includeProperties.Aggregate(query, (current, includeProperty) => current.Include(includeProperty));
+            return await query.FirstOrDefaultAsync(n => n.Id == id);
         }
 
-        public async Task<T> GetResultByIdAsync(string uri)
+        public async Task UpdateAsync(int id, T entity)
         {
-            Task<T?> c = _context.GetFromJsonAsync<T>(uri);
-            return await c;
-        }
+            try
+            {
+                EntityEntry entityEntry = _context.Entry<T>(entity);
+                entityEntry.State = EntityState.Modified;
 
-        public  Task<string> GetResultSerialize(string uri)
-        {
-            return _context.GetStringAsync(uri);
-        }
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
 
-        public async Task<HttpResponseMessage> UpdateAsync(string uri, T entity)
+                throw;
+            }
+
+        }
+        public async void Update(int id, T entity)
         {
-            return await _context.PutAsJsonAsync<T>(uri,entity);
+            try
+            {
+                EntityEntry entityEntry = _context.Entry<T>(entity);
+                entityEntry.State = EntityState.Modified;
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool IsExists(int id)
+        {
+            return _context.Set<T>().Any(n => n.Id == id);
+
         }
     }
 }

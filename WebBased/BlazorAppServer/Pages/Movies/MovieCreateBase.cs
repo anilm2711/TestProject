@@ -1,5 +1,6 @@
-﻿using BlazorAppServer.Data;
+﻿
 using BlazorAppServer.Services;
+using EBazarAppServer.ViewModels;
 using EBazarModels.Models;
 using Microsoft.AspNetCore.Components;
 using Newtonsoft.Json;
@@ -10,20 +11,18 @@ namespace BlazorAppServer.Pages.Movies
     {
         [Parameter]
         public string Id { get; set; }
-        [Inject]
-        public IMovieCustomService serviceCustomMV { get; set; }
 
         [Inject]
-        public IMovieService serviceMV { get; set; }
+        public IMoviesService serviceMV { get; set; }
 
         [Inject]
-        public IActorService service { get; set; }
+        public IActorsService service { get; set; }
 
         [Inject]
-        public IProducerService serviceProducer { get; set; }
+        public IProducersService serviceProducer { get; set; }
 
         [Inject]
-        public ICinemaService serviceCinema { get; set; }
+        public ICinemasService serviceCinema { get; set; }
         public IEnumerable<Cinema> Cinemas { get; set; }
         public NewMovieVM newMovieVM { get; set; } = new NewMovieVM();
 
@@ -41,15 +40,14 @@ namespace BlazorAppServer.Pages.Movies
 
         protected override async Task OnInitializedAsync()
         {
-            Task<string> json = service.GetResultSerialize("api/Actors");
-            Actors = JsonConvert.DeserializeObject<List<Actor>>(json.Result, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
-            Producers = (await serviceProducer.GetResult("api/Producers"));
-            Cinemas = (await serviceCinema.GetResult("api/Cinemas"));
+            Actors = await service.GetAllAsync();
+            Producers = await serviceProducer.GetAllAsync();
+            Cinemas = await serviceCinema.GetAllAsync();
             NewMovieDropdownsVM newMovieDropdownsVM = new NewMovieDropdownsVM
             {
-                Actors = Actors,
-                Producers = Producers,
-                Cinemas = Cinemas
+                Actors = Actors.ToList(),
+                Producers = Producers.ToList(),
+                Cinemas = Cinemas.ToList()
             };
             bool x= int.TryParse(Id, out int mvId);
             if (mvId > 0)
@@ -57,9 +55,7 @@ namespace BlazorAppServer.Pages.Movies
                 try
                 {
                     Id = Id ?? "1";
-                    Task<string> movieSrz = service.GetResultSerialize($"api/Movies/{Id}");
-                    data = JsonConvert.DeserializeObject<Movie>(movieSrz.Result, new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
-
+                    data= await serviceMV.GetMovieByIdAsync(mvId);
                     MV.Id = mvId;
                     MV.Price = data.Price;
                     MV.ImageURL = data.ImageURL;
@@ -77,28 +73,61 @@ namespace BlazorAppServer.Pages.Movies
                     throw ex;
                 }
             }
+            else
+            {
+                MV = new NewMovieVM();
+            }
+
         }
 
         protected async Task HandleValidSubmit()
         {
-            foreach (string pid in ActorIds)
+
+            try
             {
-                bool isNumber = int.TryParse(pid, out int actorid);
-                if (isNumber)
+                if (MV.Id <= 0)
                 {
-                    MV.ActorIds.Add(actorid);
+                    MV.ActorIds = new List<int>();
+                    if (ActorIds != null)
+                    {
+                        foreach (string pid in ActorIds)
+                        {
+                            bool isNumber = int.TryParse(pid, out int actorid);
+                            if (isNumber)
+                            {
+                                MV.ActorIds.Add(actorid);
+                            }
+                        }
+                    }
+                    serviceMV.AddNewMovieAsync(MV);
                 }
+                else
+                {
+
+                    if (ActorIds != null)
+                    {
+                        MV.ActorIds = new List<int>();
+                        foreach (string pid in ActorIds)
+                        {
+                            bool isNumber = int.TryParse(pid, out int actorid);
+                            if (isNumber)
+                            {
+                                MV.ActorIds.Add(actorid);
+                            }
+                        }
+                    }
+                    serviceMV.UpdateMovieAsync(MV);
+                }
+
             }
-
-
-            HttpResponseMessage result;
-
-            result = await serviceCustomMV.AddMovie("api/MoviesCustom", MV);
-
-            if (result != null)
+            catch (Exception)
             {
-                navigationManager.NavigateTo("/", true);
+
+                throw;
             }
+
+            navigationManager.NavigateTo("/", true);
+
         }
 
         protected void ActorSelect_OnClicK(ChangeEventArgs e)

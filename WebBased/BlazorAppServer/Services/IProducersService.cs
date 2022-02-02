@@ -3,8 +3,7 @@ using EBazarModels.Models;
 
 namespace BlazorAppServer.Services
 {
-    public interface IActorService:IEntityBaseRepository<Actor>
+    public interface IProducersService : IEntityBaseRepository<Producer>
     {
-
     }
 }

@@ -59,8 +59,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzXE1vdmllTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Orders/ShoppingCart.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXFNob3BwaW5nQ2FydC5yYXpvcg==
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Orders/ShoppingCartView.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXFNob3BwaW5nQ2FydFZpZXcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Producers/ProducerDetails.razor]

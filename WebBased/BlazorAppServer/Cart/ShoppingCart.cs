@@ -18,13 +18,23 @@ namespace EBazarAppServer.Data.Cart
 
         public static ShoppingCart GetShoppingCart(IServiceProvider services)
         {
-            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
-            var context = services.GetService<AppDbContext>();
+            try
+            {
+                ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+                var context = services.GetService<AppDbContext>();
 
-            string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
-            session.SetString("CartId", cartId);
+                string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
+                session.SetString("CartId", cartId);
 
-            return new ShoppingCart(context) { ShoppingCartId = cartId };
+                return new ShoppingCart(context) { ShoppingCartId = cartId };
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            
         }
 
         public void AddItemToCart(Movie movie)
@@ -69,10 +79,14 @@ namespace EBazarAppServer.Data.Cart
 
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
-            return ShoppingCartItems ?? (ShoppingCartItems = _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Include(n => n.Movie).ToList());
+            ShoppingCartItems = _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Include(n => n.Movie).ToList();
+            return ShoppingCartItems;
         }
 
-        public double GetShoppingCartTotal() => _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Select(n => n.Movie.Price * n.Amount).Sum();
+        public double GetShoppingCartTotal()
+        {
+            return _context.ShoppingCartItems.Where(n => n.ShoppingCartId == ShoppingCartId).Select(n => n.Movie.Price * n.Amount).Sum();
+        }
 
         public async Task ClearShoppingCartAsync()
         {

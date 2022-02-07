@@ -1,4 +1,6 @@
-﻿using EBazarModels.Models;
+﻿using BlazorAppServer.SessionStorage;
+using EBazarModels.Models;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,22 +13,36 @@ namespace EBazarAppServer.Data.Cart
         public string ShoppingCartId { get; set; }
         public List<ShoppingCartItem> ShoppingCartItems { get; set; }
 
+        public ShoppingCart()
+        {
+
+        }
+
         public ShoppingCart(AppDbContext context)
         {
             _context = context;
         }
 
-        public static ShoppingCart GetShoppingCart(IServiceProvider services)
+        private static string CartId { get; set; }
+
+        public async Task<ShoppingCart> GetShoppingCart(IServiceProvider services)
         {
             try
             {
-                ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+                var session = services.GetService<ISessionStorageService>();
                 var context = services.GetService<AppDbContext>();
-
-                string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
-                session.SetString("CartId", cartId);
-
-                return new ShoppingCart(context) { ShoppingCartId = cartId };
+                
+                var na  =await session.GetItemAsync<string>("name");
+                if (na==null)
+                {
+                    CartId = CartId ?? Guid.NewGuid().ToString();
+                    //session.SetString("CartId", cartId);
+                }
+                else
+                {
+                    CartId=na.ToString();
+                }
+                return new ShoppingCart(context) { ShoppingCartId =Convert.ToString(na)};
             }
             catch (Exception ex)
             {
@@ -36,6 +52,7 @@ namespace EBazarAppServer.Data.Cart
 
             
         }
+       
 
         public void AddItemToCart(Movie movie)
         {

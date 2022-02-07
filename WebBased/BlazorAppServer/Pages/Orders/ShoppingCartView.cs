@@ -1,4 +1,5 @@
 ﻿using BlazorAppServer.Services;
+using BlazorAppServer.SessionStorage;
 using EBazarAppServer.Data.Cart;
 using EBazarAppServer.ViewModels;
 using Microsoft.AspNetCore.Components;
@@ -11,18 +12,59 @@ namespace BlazorAppServer.Pages.Orders
 {
     public partial class ShoppingCartView : ComponentBase
     {
+        [Inject]
+        ISessionStorageService sessionStorage { get; set; }
+
         [Parameter]
         public string Id { get; set; }
-        public ShoppingCartVM shoppingCartVM { get; set; }
+        public ShoppingCartVM shoppingCartVM { get; set; } = new ShoppingCartVM();
 
         [Inject]
         private  IMoviesService _moviesService { get; set; }
+
         [Inject]
         private  ShoppingCart _shoppingCart { get; set; }
+
         [Inject]
         private  IOrdersService _ordersService { get; set; }
 
-        protected override async Task OnParametersSetAsync()
+        private string CartId { get; set; }
+
+        private string sessionValue { get; set; }
+
+        public bool? FstRender { get; set; } = null;
+
+        public string NameFromSessionStorage { get; set; }
+        public int ItemInSessionStorage { get; set; }
+        public string Name { get; set; }
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            FstRender = firstRender;
+            if (firstRender)
+            {
+                await GetNameFromSessionStorage();
+                await GetSessionStorageLenght();
+                if(string.IsNullOrEmpty(NameFromSessionStorage))
+                {
+                    Name = Guid.NewGuid().ToString();
+                    await SaveName();
+                }
+                _shoppingCart.ShoppingCartId = NameFromSessionStorage;
+                await AddItemToCart();
+            }
+           
+
+        }
+
+        protected override async Task OnInitializedAsync()
+        {
+            if (FstRender == false)
+            {
+              await  AddItemToCart();
+            }
+        }
+        protected async Task AddItemToCart()
         {
             try
             {
@@ -31,11 +73,11 @@ namespace BlazorAppServer.Pages.Orders
                 {
                     _shoppingCart.AddItemToCart(item);
                 }
-                ShoppingCart(); 
+                ShoppingCart();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -47,6 +89,7 @@ namespace BlazorAppServer.Pages.Orders
             {
                 _shoppingCart.RemoveItemFromCart(item);
             }
+            StateHasChanged();
         }
         public async Task AddItemToShoppingCart(MouseEventArgs e)
         {
@@ -67,7 +110,42 @@ namespace BlazorAppServer.Pages.Orders
                 ShoppingCart = _shoppingCart,
                 ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
             };
+            StateHasChanged();
             return shoppingCartVM;
+        }
+
+        async Task SaveName()
+        {
+            await sessionStorage.SetItemAsync("name", Name);
+            await GetNameFromSessionStorage();
+            await GetSessionStorageLenght();
+        }
+
+        async Task RemoveName()
+        {
+            await sessionStorage.RemoveItemAsync("name");
+            await GetNameFromSessionStorage();
+            await GetSessionStorageLenght();
+        }
+        async Task ClearSessionStorage()
+        {
+            await sessionStorage.ClearAsync();
+            await GetNameFromSessionStorage();
+            await GetSessionStorageLenght();
+        }
+
+        async Task GetNameFromSessionStorage()
+        {
+            NameFromSessionStorage = await sessionStorage.GetItemAsync<string>("name");
+            if (string.IsNullOrEmpty(NameFromSessionStorage))
+            {
+                NameFromSessionStorage = "";
+            }
+        }
+
+        async Task GetSessionStorageLenght()
+        {
+            ItemInSessionStorage = await sessionStorage.LengthAsync();
         }
 
     }

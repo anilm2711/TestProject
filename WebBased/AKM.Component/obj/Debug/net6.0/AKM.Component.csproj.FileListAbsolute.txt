@@ -3,7 +3,6 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\bin\Debug\net6.0\AKM.
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\bin\Debug\net6.0\AKM.Component.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\bin\Debug\net6.0\ref\AKM.Component.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\bin\Debug\net6.0\AKM.Component.pdb
-E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\obj\Debug\net6.0\AKM.Component.csproj.AssemblyReference.cache
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\obj\Debug\net6.0\AKM.Component.GeneratedMSBuildEditorConfig.editorconfig
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\obj\Debug\net6.0\AKM.Component.AssemblyInfoInputs.cache
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\obj\Debug\net6.0\AKM.Component.AssemblyInfo.cs
@@ -16,3 +15,4 @@ E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\obj\Debug\net6.0\scop
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\obj\Debug\net6.0\AKM.Component.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\obj\Debug\net6.0\ref\AKM.Component.dll
 E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\obj\Debug\net6.0\AKM.Component.pdb
+E:\VS2022_TRIAL_PROJECT\TestProject\WebBased\AKM.Component\obj\Debug\net6.0\AKM.Component.csproj.AssemblyReference.cache

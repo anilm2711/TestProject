@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Components.Web;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using BlazorAppServer.SessionStorage;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.JSInterop;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers(options => options.EnableEndpointRouting = false);
@@ -45,9 +48,19 @@ builder.Services.AddScoped<IMoviesService, MoviesService>();
 builder.Services.AddScoped<IOrdersService, OrdersService>();
 builder.Services.AddScoped<ICinemasService, CinemasService>();
 //builder.Services.AddScoped<IFileUploadService, FileUploadService>();
+builder.Services.AddBlazoredSessionStorage();
+
+builder.Services.AddScoped<ShoppingCart>();
+
+
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+//builder.Services.AddSingleton<IJSInProcessRuntime>(services => (IJSInProcessRuntime)services.GetRequiredService<IJSRuntime>());
+//builder.Services.AddScoped<ISyncSessionStorageService, SyncSessionStorageService>();
+
+
+//builder.Services.AddScoped(sc=>ShoppingCart.GetShoppingCart(sc));
+//builder.Services.AddScoped(typeof(ShoppingCart));
 
 
 var app = builder.Build();

@@ -81,19 +81,19 @@ namespace BlazorAppServer.Pages.Orders
             }
         }
 
-        public async Task RemoveItemFromShoppingCart(MouseEventArgs e)
+        public async Task RemoveItemFromShoppingCart(int movieId)
         {
-            var item = await _moviesService.GetMovieByIdAsync(Convert.ToInt32(Id));
+            var item = await _moviesService.GetMovieByIdAsync(movieId);
 
             if (item != null)
             {
                 _shoppingCart.RemoveItemFromCart(item);
             }
-            StateHasChanged();
+
         }
-        public async Task AddItemToShoppingCart(MouseEventArgs e)
+        public async Task AddItemToShoppingCart(int movieId)
         {
-            var item = await _moviesService.GetMovieByIdAsync(Convert.ToInt32(Id));
+            var item = await _moviesService.GetMovieByIdAsync(movieId);
             if (item != null)
             {
                 _shoppingCart.AddItemToCart(item);

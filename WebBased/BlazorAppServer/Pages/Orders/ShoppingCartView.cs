@@ -89,7 +89,7 @@ namespace BlazorAppServer.Pages.Orders
             {
                 _shoppingCart.RemoveItemFromCart(item);
             }
-
+            _shoppingCart.GetShoppingCartItems();
         }
         public async Task AddItemToShoppingCart(int movieId)
         {
@@ -98,6 +98,7 @@ namespace BlazorAppServer.Pages.Orders
             {
                 _shoppingCart.AddItemToCart(item);
             }
+            _shoppingCart.GetShoppingCartItems();
         }
 
         public ShoppingCartVM ShoppingCart()

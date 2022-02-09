@@ -1,4 +1,5 @@
-﻿using BlazorAppServer.Services;
+﻿using BlazorAppServer.Data.ViewComponents;
+using BlazorAppServer.Services;
 using BlazorAppServer.SessionStorage;
 using EBazarAppServer.Data.Cart;
 using EBazarAppServer.ViewModels;
@@ -12,9 +13,6 @@ namespace BlazorAppServer.Pages.Orders
 {
     public partial class ShoppingCartView : ComponentBase
     {
-        [Inject]
-        ISessionStorageService sessionStorage { get; set; }
-
         [Parameter]
         public string Id { get; set; }
         public ShoppingCartVM shoppingCartVM { get; set; } = new ShoppingCartVM();
@@ -25,44 +23,32 @@ namespace BlazorAppServer.Pages.Orders
         [Inject]
         private  ShoppingCart _shoppingCart { get; set; }
 
+        [Parameter]
+        public EventCallback<int> OnMovieSelection { get; set; }
+
         [Inject]
-        private  IOrdersService _ordersService { get; set; }
+        public ItemsInCart currentPage { get; set; }
 
-        private string CartId { get; set; }
-
-        private string sessionValue { get; set; }
-
-        public bool? FstRender { get; set; } = null;
-
-        public string NameFromSessionStorage { get; set; }
-        public int ItemInSessionStorage { get; set; }
-        public string Name { get; set; }
-
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-        {
-            FstRender = firstRender;
-            if (firstRender)
-            {
-                await GetNameFromSessionStorage();
-                await GetSessionStorageLenght();
-                if(string.IsNullOrEmpty(NameFromSessionStorage))
-                {
-                    Name = Guid.NewGuid().ToString();
-                    await SaveName();
-                }
-                _shoppingCart.ShoppingCartId = NameFromSessionStorage;
-                await AddItemToCart();
-            }
-           
-
-        }
+        private string count { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            if (FstRender == false)
-            {
-              await  AddItemToCart();
-            }
+            await AddItemToCart();
+        }
+
+        private void CountItems(int countIt)
+        {
+            if (countIt == 0)
+                count = String.Empty;
+            else
+                count = Convert.ToString(countIt);
+
+            currentPage.SetCurrentPageName(count);
+            ChangeName();
+        }
+        public void ChangeName()
+        {
+            currentPage.SetCurrentPageName(count);
         }
         protected async Task AddItemToCart()
         {
@@ -89,7 +75,8 @@ namespace BlazorAppServer.Pages.Orders
             {
                 _shoppingCart.RemoveItemFromCart(item);
             }
-            _shoppingCart.GetShoppingCartItems();
+          await  ShoppingCart();
+            
         }
         public async Task AddItemToShoppingCart(int movieId)
         {
@@ -98,12 +85,13 @@ namespace BlazorAppServer.Pages.Orders
             {
                 _shoppingCart.AddItemToCart(item);
             }
-            _shoppingCart.GetShoppingCartItems();
+            await OnMovieSelection.InvokeAsync(4);
+            await ShoppingCart();
         }
-
-        public ShoppingCartVM ShoppingCart()
+        public async Task<ShoppingCartVM> ShoppingCart()
         {
-            var items = _shoppingCart.GetShoppingCartItems();
+            var items =_shoppingCart.GetShoppingCartItems();
+
             _shoppingCart.ShoppingCartItems = items;
 
             shoppingCartVM = new ShoppingCartVM()
@@ -111,43 +99,12 @@ namespace BlazorAppServer.Pages.Orders
                 ShoppingCart = _shoppingCart,
                 ShoppingCartTotal = _shoppingCart.GetShoppingCartTotal()
             };
-            StateHasChanged();
+            CountItems(items.Count);
             return shoppingCartVM;
         }
 
-        async Task SaveName()
-        {
-            await sessionStorage.SetItemAsync("name", Name);
-            await GetNameFromSessionStorage();
-            await GetSessionStorageLenght();
-        }
 
-        async Task RemoveName()
-        {
-            await sessionStorage.RemoveItemAsync("name");
-            await GetNameFromSessionStorage();
-            await GetSessionStorageLenght();
-        }
-        async Task ClearSessionStorage()
-        {
-            await sessionStorage.ClearAsync();
-            await GetNameFromSessionStorage();
-            await GetSessionStorageLenght();
-        }
 
-        async Task GetNameFromSessionStorage()
-        {
-            NameFromSessionStorage = await sessionStorage.GetItemAsync<string>("name");
-            if (string.IsNullOrEmpty(NameFromSessionStorage))
-            {
-                NameFromSessionStorage = "";
-            }
-        }
-
-        async Task GetSessionStorageLenght()
-        {
-            ItemInSessionStorage = await sessionStorage.LengthAsync();
-        }
 
     }
 }

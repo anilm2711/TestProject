@@ -1,4 +1,8 @@
-﻿@*<div class="navbar navbar-expand-lg navbar-dark bg-dark">
+﻿@using BlazorAppServer.Data.ViewComponents
+@using BlazorAppServer.SessionStorage
+@using EBazarAppServer.Data.Cart
+@inject ItemsInCart currentPage
+@*<div class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
     <a class="navbar-brand" href="">BlazorAppServer</a>
     <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
@@ -61,24 +65,106 @@
                 </li>
             </ul>
             <form class="d-flex">
-                <input class="form-control me-sm-2" type="text" placeholder="Search">
-                 <a class="btn btn-secondary my-2 my-sm-0" href="@($"movie/{srch}")"></a>
+                <input class="form-control me-sm-2" type="text" placeholder="Search" @bind=searchItemString>
                 <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
             </form>
+            <div>
+
+                <a class="nav-link">
+                    <i class="bi bi-cart4"></i>@currentPage.CurrentPageName
+                </a>
+
+            </div>
         </div>
     </div>
 </nav>
 
 
 @code {
+
+    [Inject]
+    ISessionStorageService sessionStorage { get; set; }
+    [Inject]
+    private ShoppingCart _shoppingCart { get; set; }
+
+    public string NameFromSessionStorage { get; set; }
+    public int ItemInSessionStorage { get; set; }
+    public string Name { get; set; }
     [Parameter]
-    public string srch { get; set; } = "New Movie";
+    public string searchItemString { get; set; } = "New Movie";
     private bool collapseNavMenu = true;
 
+    public string SelectedMovieCount { get; set; }
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await GetNameFromSessionStorage();
+        if (firstRender)
+        {
+            if (string.IsNullOrEmpty(NameFromSessionStorage))
+            {
+                Name = Guid.NewGuid().ToString();
+                await SaveName();
+            }
+        }
+        _shoppingCart.ShoppingCartId = NameFromSessionStorage;
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        currentPage.OnChange += () => StateHasChanged();
+        var items = _shoppingCart.GetShoppingCartItems();
+        SelectedMovieCount = Convert.ToString(items.Count());
+        await base.OnInitializedAsync();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var items = _shoppingCart.GetShoppingCartItems();
+        SelectedMovieCount = Convert.ToString(items.Count());
+        await base.OnParametersSetAsync();
+    }
+
+
+    async Task GetNameFromSessionStorage()
+    {
+        NameFromSessionStorage = await sessionStorage.GetItemAsync<string>("name");
+        if (string.IsNullOrEmpty(NameFromSessionStorage))
+        {
+            NameFromSessionStorage = "";
+        }
+    }
+    async Task SaveName()
+    {
+        await sessionStorage.SetItemAsync("name", Name);
+        await GetNameFromSessionStorage();
+    }
+    async Task RemoveName()
+    {
+        await sessionStorage.RemoveItemAsync("name");
+        await GetNameFromSessionStorage();
+        await GetSessionStorageLenght();
+    }
+    async Task ClearSessionStorage()
+    {
+        await sessionStorage.ClearAsync();
+        await GetNameFromSessionStorage();
+        await GetSessionStorageLenght();
+    }
+
+    async Task GetSessionStorageLenght()
+    {
+        ItemInSessionStorage = await sessionStorage.LengthAsync();
+    }
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    public void MovieSelectionChanged(int count)
+    {
+        SelectedMovieCount = Convert.ToString(count);
     }
 }

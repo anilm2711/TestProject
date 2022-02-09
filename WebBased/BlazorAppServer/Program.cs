@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using BlazorAppServer.SessionStorage;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.JSInterop;
+using BlazorAppServer.Data.ViewComponents;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers(options => options.EnableEndpointRouting = false);
@@ -51,7 +52,8 @@ builder.Services.AddScoped<ICinemasService, CinemasService>();
 builder.Services.AddBlazoredSessionStorage();
 
 builder.Services.AddScoped<ShoppingCart>();
-
+builder.Services.AddScoped<ItemsInCart>();
+builder.Services.AddScoped<SearchItems>();
 
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

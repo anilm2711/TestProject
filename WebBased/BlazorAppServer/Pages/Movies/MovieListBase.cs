@@ -1,4 +1,5 @@
-﻿using BlazorAppServer.Services;
+﻿using BlazorAppServer.Data.ViewComponents;
+using BlazorAppServer.Services;
 using EBazarModels.Models;
 using Microsoft.AspNetCore.Components;
 using Newtonsoft.Json;
@@ -17,8 +18,8 @@ namespace BlazorAppServer.Pages
         protected override async Task OnInitializedAsync()
         {
             string s = value;
-            resultList = await service.GetAllAsync(x=>x.Cinema);
-
+            resultList = await service.GetAllAsync(x => x.Cinema);
         }
+
     }
 }

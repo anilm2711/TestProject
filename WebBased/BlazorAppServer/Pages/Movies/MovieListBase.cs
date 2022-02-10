@@ -21,10 +21,8 @@ namespace BlazorAppServer.Pages
         protected override async Task OnInitializedAsync()
         {
             resultList = await service.GetAllAsync(x => x.Cinema);
-            //searchItem.SetCurrentSearchString(searchItem.CurrentSearchString);
             searchItem.OnChange += StateHasChanged;
-
-           if (string.IsNullOrEmpty(value) == false)
+            if (string.IsNullOrEmpty(value) == false)
             {
                 resultList = resultList.Where(p => p.Name.ToLower().Contains(value.ToLower())
                 || p.Description.ToLower().Contains(value.ToLower())).ToList();

@@ -6,8 +6,9 @@ using Newtonsoft.Json;
 
 namespace BlazorAppServer.Pages
 {
-    public class MovieListBase : ComponentBase,IDisposable
+    public class MovieListBase : ComponentBase
     {
+        
         [Inject]
         public SearchItems searchItem { get; set; }
 
@@ -28,11 +29,5 @@ namespace BlazorAppServer.Pages
                 || p.Description.ToLower().Contains(value.ToLower())).ToList();
             }
         }
-
-        public void Dispose()
-        {
-            searchItem.OnChange -= StateHasChanged;
-        }
-
     }
 }

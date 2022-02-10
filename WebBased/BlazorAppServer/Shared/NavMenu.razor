@@ -2,6 +2,9 @@
 @using BlazorAppServer.SessionStorage
 @using EBazarAppServer.Data.Cart
 @inject ItemsInCart currentPage
+@inject SearchItems searchItem
+@inject NavigationManager UriHelper
+
 @*<div class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
     <a class="navbar-brand" href="">BlazorAppServer</a>
@@ -64,10 +67,11 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-sm-2" type="text" placeholder="Search" @bind=searchItemString>
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            <form class="d-flex" >
+                <input   formaction="actionSearch" class="form-control me-sm-2" type="text" placeholder="Search" name="searchString" @bind=searchItemString>
+               
             </form>
+             <button class="btn btn-secondary my-2 my-sm-0" @onclick="SearchButton_Click">Search</button>
             <div>
 
                 <a class="nav-link">
@@ -90,12 +94,15 @@
     public string NameFromSessionStorage { get; set; }
     public int ItemInSessionStorage { get; set; }
     public string Name { get; set; }
-    [Parameter]
-    public string searchItemString { get; set; } = "New Movie";
+
+    public string searchItemString { get; set; }
+
     private bool collapseNavMenu = true;
 
     public string SelectedMovieCount { get; set; }
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -117,6 +124,12 @@
         var items = _shoppingCart.GetShoppingCartItems();
         SelectedMovieCount = Convert.ToString(items.Count());
         await base.OnInitializedAsync();
+    }
+
+    public void SearchButton_Click()
+    {
+        UriHelper.NavigateTo($"/movie/{searchItemString}",true);
+        //searchItem.SetCurrentSearchString(searchItemString);
     }
 
     protected override async Task OnParametersSetAsync()

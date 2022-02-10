@@ -1,4 +1,5 @@
-﻿namespace BlazorAppServer.Data.ViewComponents
+﻿
+namespace BlazorAppServer.Data.ViewComponents
 {
     public class SearchItems
     {
@@ -6,15 +7,12 @@
 
         public void SetCurrentSearchString(string name)
         {
-            if (!string.Equals(CurrentSearchString, name))
-            {
-                CurrentSearchString = name;
-                NotifyStateChanged();
-            }
+            CurrentSearchString = name;
+            NotifyStateChanged();
         }
 
-        public event Action OnChangeOfSearchString; // event raised when changed
+        public event Action OnChange; // event raised when changed
 
-        private void NotifyStateChanged() => OnChangeOfSearchString?.Invoke();
+        private void NotifyStateChanged() => OnChange?.Invoke();
     }
 }

@@ -21,8 +21,8 @@
             return actions.payment.create({
                 transactions: [{
                     amount: {
-                        total: _total,
-                        currency: 'USD'
+                        total: 30,
+                        currency: 'INR' 
                     }
                 }]
             });
@@ -31,7 +31,7 @@
         //Execute the payment
         onAuthorize: function (data, actions) {
             return actions.payment.execute().then(function () {
-                var url = '@Url.Action("CompleteOrder", "Orders", new { })';
+                var url = '@Url.Action("/ordercomplete")';
                 window.location.href = url;
             });
         }

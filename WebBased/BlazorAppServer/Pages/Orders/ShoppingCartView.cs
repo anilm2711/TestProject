@@ -1,13 +1,8 @@
 ﻿using BlazorAppServer.Data.ViewComponents;
 using BlazorAppServer.Services;
-using BlazorAppServer.SessionStorage;
 using EBazarAppServer.Data.Cart;
 using EBazarAppServer.ViewModels;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace BlazorAppServer.Pages.Orders
 {
@@ -21,6 +16,9 @@ namespace BlazorAppServer.Pages.Orders
         private  IMoviesService _moviesService { get; set; }
 
         [Inject]
+        private IOrdersService _ordersService { get; set; }
+
+        [Inject]
         private  ShoppingCart _shoppingCart { get; set; }
 
         [Parameter]
@@ -30,6 +28,10 @@ namespace BlazorAppServer.Pages.Orders
         public ItemsInCart currentPage { get; set; }
 
         private string count { get; set; }
+
+        [Inject]
+        public NavigationManager navigationManager { get; set; }
+
 
         protected override async Task OnInitializedAsync()
         {
@@ -103,6 +105,17 @@ namespace BlazorAppServer.Pages.Orders
             return shoppingCartVM;
         }
 
+        public async Task CompleteOrder()
+        {
+            var items = _shoppingCart.GetShoppingCartItems();
+            string userId = "anil";//   User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userEmailAddress = "fakeemail.@fake.com";//User.FindFirstValue(ClaimTypes.Email);
+
+            await _ordersService.StoreOrderAsync(items, userId, userEmailAddress);
+            await _shoppingCart.ClearShoppingCartAsync();
+
+            navigationManager.NavigateTo("OrderCompleted");
+        }
 
 
 

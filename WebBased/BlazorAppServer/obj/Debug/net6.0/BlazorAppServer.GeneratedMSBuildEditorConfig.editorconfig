@@ -67,6 +67,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzXE1vdmllTGlzdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Orders/OrderCompleted.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXE9yZGVyQ29tcGxldGVkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Orders/OrderHome.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXE9yZGVySG9tZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Orders/ShoppingCartView.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3JkZXJzXFNob3BwaW5nQ2FydFZpZXcucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -77,6 +85,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Producers/ProducerList.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjZXJzXFByb2R1Y2VyTGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/PayPalComponentCustom/PaypalCheckout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGF5UGFsQ29tcG9uZW50Q3VzdG9tXFBheXBhbENoZWNrb3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/_Imports.razor]

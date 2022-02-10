@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "igglIITLi1BsAIT5kUhCtE+iNWxdJV7fPGGwpszq1QY=",
+  "Hash": "PvdQVUaFOnQZHT+T+yODIa/uv3llEjUS4cJdiX8VvFM=",
   "Source": "BlazorAppServer",
   "BasePath": "_content/BlazorAppServer",
   "Mode": "Default",
@@ -391,6 +391,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\BlazorAppServer\\wwwroot\\Index.js",
+      "SourceId": "BlazorAppServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\BlazorAppServer\\wwwroot\\",
+      "BasePath": "_content/BlazorAppServer",
+      "RelativePath": "Index.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Index.js"
+    },
+    {
+      "Identity": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\BlazorAppServer\\wwwroot\\JavaScript.js",
+      "SourceId": "BlazorAppServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\VS2022_TRIAL_PROJECT\\TestProject\\WebBased\\BlazorAppServer\\wwwroot\\",
+      "BasePath": "_content/BlazorAppServer",
+      "RelativePath": "JavaScript.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\JavaScript.js"
     }
   ]
 }

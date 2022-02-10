@@ -1,0 +1,23 @@
+﻿@page "/checkout"
+
+@inject IJSRuntime JSRuntime
+
+<div >
+    <div id="paypal-btn"> </div>
+</div>
+
+@code {
+
+    [Parameter]
+    public int Amount { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("InitiPayPal");
+            StateHasChanged();
+        }
+    }
+
+}

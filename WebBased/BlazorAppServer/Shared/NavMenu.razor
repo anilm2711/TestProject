@@ -5,31 +5,6 @@
 @inject SearchItems searchItem
 @inject NavigationManager UriHelper
 
-@*<div class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-    <a class="navbar-brand" href="">BlazorAppServer</a>
-    <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    </div>
-    </div>
-
-    <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-    <div class="nav-item px-3">
-    <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-    <span class="oi oi-home" aria-hidden="true"></span> Home
-    </NavLink>
-    </div>
-    <div class="nav-item px-3">
-    <NavLink class="nav-link" href="actor">
-    <span class="oi oi-list-rich" aria-hidden="true"></span> Actor
-    </NavLink>
-    </div>
-    </nav>
-    </div>
-*@
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,20 +42,41 @@
                     <a class="nav-link" href="#">About</a>
                 </li>
             </ul>
-            <form class="d-flex" >
-                <input   formaction="actionSearch" class="form-control me-sm-2" type="text" placeholder="Search" name="searchString" @bind=searchItemString>
-               
+            <form class="d-flex">
+                <input class="form-control me-sm-2" type="text" placeholder="Search" name="searchString" @bind=searchItemString>
             </form>
-             <button class="btn btn-secondary my-2 my-sm-0" @onclick="SearchButton_Click">Search</button>
+            <button class="btn btn-secondary my-2 my-sm-0" @onclick="SearchButton_Click">Search</button>
             <div>
 
                 <a class="nav-link">
                     <i class="bi bi-cart4"></i>@currentPage.CurrentPageName
                 </a>
-
             </div>
+            @*User profile section*@
+           <div class="dropdown">
+                <a class="nav-link dropdown-toggle" id="profile-btn" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="bi bi-person-badge"></i> Hello User @*@UserManager.GetUserName(User)*@
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="profile-btn">
+                    <li>
+                        <a class="dropdown-item"  href="orderhome">
+                            <i class="bi bi-list"></i> Orders
+                        </a>
+                    </li>
+
+                    @*@if (User.IsInRole("Admin"))
+                    {
+                        <li>
+                            <a class="dropdown-item" asp-controller="Account" asp-action="Users">
+                                <i class="bi bi-people"></i> Users
+                            </a>
+                        </li>
+                    }*@
+                </ul>
+           </div>
         </div>
     </div>
+     
 </nav>
 
 
@@ -128,8 +124,7 @@
 
     public void SearchButton_Click()
     {
-        UriHelper.NavigateTo($"/movie/{searchItemString}",true);
-        //searchItem.SetCurrentSearchString(searchItemString);
+        UriHelper.NavigateTo($"/movie/{searchItemString}", true);
     }
 
     protected override async Task OnParametersSetAsync()

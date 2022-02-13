@@ -1,0 +1,50 @@
+﻿@page "/Register"
+
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <p>
+            <h4>Sign up for a new account</h4>
+        </p>
+
+        @if (string.IsNullOrEmpty(RegisterVM.ErrorMessage)==false)
+        {
+            <div class="col-md-12 alert alert-danger">
+                <span><b>Sorry!</b> - @RegisterVM.ErrorMessage </span>
+            </div>
+        }
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <EditForm Model="@RegisterVM" OnValidSubmit="HandleOnValidSubmit">
+                    <DataAnnotationsValidator></DataAnnotationsValidator>
+                    <div class="form-group">
+                        <label for="FullName" class="control-label">FullName</label>
+                        <InputText for="FullName" class="form-control" @bind-Value="RegisterVM.FullName"  />
+                        <ValidationMessage For="@(()=>RegisterVM.FullName)"></ValidationMessage>
+                    </div>
+                    <div class="form-group">
+                        <label for="EmailAddress" class="control-label">EmailAddress</label>
+                        <InputText for="EmailAddress" @bind-Value="RegisterVM.EmailAddress" class="form-control" />
+                        <ValidationMessage For="@(()=>RegisterVM.EmailAddress)"></ValidationMessage>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password" class="control-label">Password</label>
+                        <InputText for="Password" @bind-Value="RegisterVM.Password" class="form-control" type="password"/>
+                        <ValidationMessage For="@(()=>RegisterVM.Password)"></ValidationMessage>
+                    </div>
+                    <div class="form-group">
+                        <label for="ConfirmPassword" class="control-label">ConfirmPassword</label>
+                        <InputText for="ConfirmPassword" @bind-Value="RegisterVM.ConfirmPassword" class="form-control" />
+                        <ValidationMessage For="@(()=>RegisterVM.ConfirmPassword)"></ValidationMessage>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="btn btn-outline-success float-right" type="submit" value="Sign up" />
+                        <a class="btn btn-outline-secondary" href="/">Cancel</a>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>

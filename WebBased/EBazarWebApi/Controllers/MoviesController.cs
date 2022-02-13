@@ -1,4 +1,5 @@
 ﻿#nullable disable
+using EBazarModels.Data.ViewModels;
 using EBazarModels.Models;
 using EBazarWebApi.Data;
 using EBazarWebApi.Data.ViewModels;

@@ -1,8 +1,11 @@
+using EBazarModels.Models;
 using EBazarWebApi.Data;
 using EBazarWebApi.Data.Cart;
 using EBazarWebApi.Data.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Web.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,12 +38,15 @@ builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
 });
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-
+    app.UseDeveloperExceptionPage();
 }
 
 app.UseHttpsRedirection();

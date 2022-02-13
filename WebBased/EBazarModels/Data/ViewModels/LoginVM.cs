@@ -1,6 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace EBazarWebApi.Data.ViewModels
+namespace EBazarModels.Data.ViewModels
 {
     public class LoginVM
     {
@@ -11,5 +16,9 @@ namespace EBazarWebApi.Data.ViewModels
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public bool IsSucceed { get; set; }
+
+        public string ErrorMessage { get; set; }
     }
 }

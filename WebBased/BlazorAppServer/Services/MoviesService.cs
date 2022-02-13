@@ -1,6 +1,7 @@
 ﻿using BlazorAppServer.Base;
 using EBazarAppServer.Data;
 using EBazarAppServer.ViewModels;
+using EBazarModels.Data.ViewModels;
 using EBazarModels.Models;
 using Microsoft.EntityFrameworkCore;
 

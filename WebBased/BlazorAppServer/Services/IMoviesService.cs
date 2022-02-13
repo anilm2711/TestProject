@@ -1,5 +1,6 @@
 ﻿using BlazorAppServer.Base;
 using EBazarAppServer.ViewModels;
+using EBazarModels.Data.ViewModels;
 using EBazarModels.Models;
 
 namespace BlazorAppServer.Services

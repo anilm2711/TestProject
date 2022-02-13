@@ -22,7 +22,7 @@
                 transactions: [{
                     amount: {
                         total: 30,
-                        currency: 'INR' 
+                        currency: 'USD' 
                     }
                 }]
             });
@@ -31,7 +31,7 @@
         //Execute the payment
         onAuthorize: function (data, actions) {
             return actions.payment.execute().then(function () {
-                var url = '@Url.Action("/ordercomplete")';
+                var url = "/ordercomplete";
                 window.location.href = url;
             });
         }

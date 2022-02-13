@@ -1,0 +1,40 @@
+﻿@page "/login"
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <p>
+            <h4>Log in to your account</h4>
+        </p>
+
+        @if(Error != null)
+            {
+                <div class="col-md-12 alert alert-danger">
+                    <span><b>Sorry!</b> - @Error </span>
+                </div>
+            }
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <EditForm Model="loginVM" OnValidSubmit="HandleOnValidSubmit" >
+                    <DataAnnotationsValidator></DataAnnotationsValidator>
+                    <div class="form-group">
+                        <label for="EmailAddress" class="control-label">Email</label>
+                        <InputText for="EmailAddress" class="form-control" @bind-Value=loginVM.EmailAddress></InputText>
+                         <ValidationMessage For="@(()=>loginVM.EmailAddress)"></ValidationMessage>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password" class="control-label">Password</label>
+                        <InputText for="Password" class="form-control" @bind-Value=loginVM.Password type="password"></InputText>
+                        <ValidationMessage For="@(()=>loginVM.Password)"></ValidationMessage>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="btn btn-outline-success float-right" type="submit" value="Log in" />
+                        <a class="btn btn-outline-secondary" href="/">Cancel</a>
+                    </div>
+                </EditForm>
+            </div>
+        </div>
+    </div>
+</div>
+

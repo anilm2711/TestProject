@@ -1,6 +1,11 @@
 ﻿using EBazarModels.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace EBazarAppServer.ViewModels
+namespace EBazarModels.Data.ViewModels
 {
     public class NewMovieDropdownsVM
     {

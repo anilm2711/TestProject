@@ -1,6 +1,7 @@
 ﻿
 using BlazorAppServer.Services;
 using EBazarAppServer.ViewModels;
+using EBazarModels.Data.ViewModels;
 using EBazarModels.Models;
 using Microsoft.AspNetCore.Components;
 using Newtonsoft.Json;

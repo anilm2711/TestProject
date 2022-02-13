@@ -19,6 +19,14 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/AccountSection/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFNlY3Rpb25cTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/AccountSection/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFNlY3Rpb25cUmVnaXN0ZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Actors/ActorDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0b3JzXEFjdG9yRGV0YWlscy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -45,14 +53,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/FileUpload2.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsZVVwbG9hZDIucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Login/Home.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cSG9tZS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Login/Login.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/VS2022_TRIAL_PROJECT/TestProject/WebBased/BlazorAppServer/Pages/Movies/MovieCreate.razor]

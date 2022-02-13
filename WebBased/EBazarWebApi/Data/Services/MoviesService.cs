@@ -1,4 +1,5 @@
-﻿using EBazarModels.Models;
+﻿using EBazarModels.Data.ViewModels;
+using EBazarModels.Models;
 using EBazarWebApi.Data.Base;
 using EBazarWebApi.Data.ViewModels;
 using Microsoft.EntityFrameworkCore;

@@ -44,11 +44,11 @@ namespace BlazorAppServer.Pages
 
             if (Actor.Id > 0)
             {
-                service.UpdateAsync(Convert.ToInt32(Id), Actor);
+               await service.UpdateAsync(Convert.ToInt32(Id), Actor);
             }
             else
             {
-                service.AddAsync(Actor);
+              await  service.AddAsync(Actor);
             }
             NavigationManager.NavigateTo("/actor", true);
         }

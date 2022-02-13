@@ -11,6 +11,8 @@ using BlazorAppServer.SessionStorage;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.JSInterop;
 using BlazorAppServer.Data.ViewComponents;
+using EBazarModels.Models;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers(options => options.EnableEndpointRouting = false);
@@ -43,6 +45,8 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 //builder.Services.AddHttpClient<IFileUploadService,FileUploadService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
 //builder.Services.AddHttpClient<IMovieCustomService, MovieCustomService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
 
+builder.Services.AddHttpClient<ILoginService, LoginService>(client => client.BaseAddress = new Uri("https://localhost:44356/"));
+
 builder.Services.AddScoped<IActorsService, ActorsService>();
 builder.Services.AddScoped<IProducersService, ProducersService>();
 builder.Services.AddScoped<IMoviesService, MoviesService>();
@@ -54,7 +58,14 @@ builder.Services.AddBlazoredSessionStorage();
 builder.Services.AddScoped<ShoppingCart>();
 builder.Services.AddScoped<ItemsInCart>();
 builder.Services.AddScoped<SearchItems>();
-
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+builder.Services.AddMemoryCache();
+builder.Services.AddAuthentication();
+//builder.Services.AddAuthentication(options =>
+//{
+//    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    
+//});
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 //builder.Services.AddSingleton<IJSInProcessRuntime>(services => (IJSInProcessRuntime)services.GetRequiredService<IJSRuntime>());
@@ -81,6 +92,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 app.UseSession();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 

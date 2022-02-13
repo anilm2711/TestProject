@@ -47,36 +47,47 @@
             </form>
             <button class="btn btn-secondary my-2 my-sm-0" @onclick="SearchButton_Click">Search</button>
             <div>
-
                 <a class="nav-link">
                     <i class="bi bi-cart4"></i>@currentPage.CurrentPageName
                 </a>
             </div>
+            <div>
+                <a class="btn btn-outline-success my-sm-0" href="login">
+                    <i class="bi bi-box-arrow-in-right"></i> Log in
+                </a>
+                <span style="padding: 3px;"></span>
+            </div>
+            <div>
+                <a class="btn btn-outline-primary my-sm-0" href="Register">
+                    <i class="bi bi-person-plus"></i> Register
+                </a>
+            </div>
+
             @*User profile section*@
-           <div class="dropdown">
+            <div class="dropdown">
                 <a class="nav-link dropdown-toggle" id="profile-btn" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <i class="bi bi-person-badge"></i> Hello User @*@UserManager.GetUserName(User)*@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="profile-btn">
                     <li>
-                        <a class="dropdown-item"  href="orderhome">
+                        <a class="dropdown-item" href="orderhome">
                             <i class="bi bi-list"></i> Orders
                         </a>
                     </li>
 
                     @*@if (User.IsInRole("Admin"))
-                    {
+                        {
                         <li>
-                            <a class="dropdown-item" asp-controller="Account" asp-action="Users">
-                                <i class="bi bi-people"></i> Users
-                            </a>
+                        <a class="dropdown-item" asp-controller="Account" asp-action="Users">
+                        <i class="bi bi-people"></i> Users
+                        </a>
                         </li>
-                    }*@
+                        }*@
                 </ul>
-           </div>
+            </div>
         </div>
     </div>
-     
+
 </nav>
 
 
